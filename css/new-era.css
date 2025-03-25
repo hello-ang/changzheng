@@ -1,0 +1,727 @@
+/* 新时代新长征整体区域样式 */
+.new-era-section {
+    padding: 60px 40px;
+    background: linear-gradient(135deg, #fff5f5 0%, #fff 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* 科技感网格背景 - 改用红色主题 */
+.new-era-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        linear-gradient(90deg, rgba(196, 30, 58, 0.03) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(196, 30, 58, 0.03) 1px, transparent 1px);
+    background-size: 20px 20px;
+    animation: gridMove 20s linear infinite;
+}
+
+@keyframes gridMove {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(20px, 20px); }
+}
+
+/* 主标题样式 */
+.new-era-title {
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+    z-index: 1;
+}
+
+.new-era-title span {
+    display: inline-block;
+    font-size: 36px;
+    font-weight: bold;
+    color: #c41e3a;
+    padding: 15px 60px;
+    background: linear-gradient(90deg, transparent, rgba(196, 30, 58, 0.05), transparent);
+    border: 2px solid rgba(196, 30, 58, 0.1);
+    border-radius: 50px;
+    text-shadow: 0 0 10px rgba(196, 30, 58, 0.2);
+    position: relative;
+}
+
+/* 内容容器布局 */
+.new-era-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 40px;
+    position: relative;
+    z-index: 1;
+}
+
+/* 左侧数据卡片区域 */
+.achievements-left {
+    display: flex;
+    flex-direction: column;
+    gap: 55px;
+    padding: 20px;
+    width: 380px;
+}
+
+/* 数据卡片样式重设计 */
+.data-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 25px 30px;
+    position: relative;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 10px 30px rgba(196, 30, 58, 0.05);
+    border: 1px solid rgba(196, 30, 58, 0.08);
+    overflow: hidden;
+}
+
+/* 卡片装饰背景 */
+.data-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(196, 30, 58, 0.03), transparent);
+    z-index: 1;
+}
+
+/* 图标样式 */
+.data-icon {
+    font-size: 24px;
+    color: #c41e3a;
+    background: rgba(196, 30, 58, 0.08);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    position: relative;
+    z-index: 2;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+/* 数据内容区域 */
+.data-content {
+    flex-grow: 1;
+}
+
+/* 数字样式 */
+.data-number {
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+    font-family: "DIN Condensed", Arial, sans-serif;
+    position: relative;
+    z-index: 2;
+    background: linear-gradient(45deg, #c41e3a, #ff6b6b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1;
+    margin-bottom: 5px;
+}
+
+/* 标签样式 */
+.data-label {
+    font-size: 16px;
+    color: #333;
+    font-weight: 500;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 2px;
+}
+
+/* 副标题样式 */
+.data-subtitle {
+    font-size: 13px;
+    color: #666;
+    position: relative;
+    z-index: 2;
+}
+
+/* 悬浮效果 */
+.data-card:hover {
+    transform: translateX(10px);
+    box-shadow: 0 15px 35px rgba(196, 30, 58, 0.1);
+}
+
+.data-card:hover .data-icon {
+    animation: iconPulse 1s ease infinite;
+}
+
+@keyframes iconPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* 主题色变体 */
+.data-card:nth-child(1) {
+    border-left: 4px solid #c41e3a;
+}
+
+.data-card:nth-child(2) {
+    border-left: 4px solid #1890ff;
+}
+
+.data-card:nth-child(3) {
+    border-left: 4px solid #52c41a;
+}
+
+.data-card:nth-child(4) {
+    border-left: 4px solid #722ed1;
+}
+
+.data-card:nth-child(5) {
+    border-left: 4px solid #fa8c16;
+}
+
+.data-card:nth-child(6) {
+    border-left: 4px solid #13c2c2;
+}
+
+.data-card:nth-child(7) {
+    border-left: 4px solid #eb2f96;
+}
+
+.data-card:nth-child(8) {
+    border-left: 4px solid #faad14;
+}
+
+.data-card:nth-child(9) {
+    border-left: 4px solid #f759ab;
+}
+
+.data-card:nth-child(10) {
+    border-left: 4px solid #36cfc9;
+}
+
+.data-card:nth-child(11) {
+    border-left: 4px solid #69c0ff;
+}
+
+.data-card:nth-child(12) {
+    border-left: 4px solid #b37feb;
+}
+
+.data-card:nth-child(13) {
+    border-left: 4px solid #5cdbd3;
+}
+
+.data-card:nth-child(14) {
+    border-left: 4px solid #ff85c0;
+}
+
+.data-card:nth-child(15) {
+    border-left: 4px solid #9254de;
+}
+
+.data-card:nth-child(16) {
+    border-left: 4px solid #36cfc9;
+}
+
+.data-card:nth-child(19) {
+    border-left: 4px solid #69c0ff;
+}
+
+.data-card:nth-child(20) {
+    border-left: 4px solid #b37feb;
+}
+
+.data-card:nth-child(21) {
+    border-left: 4px solid #5cdbd3;
+}
+
+.data-card:nth-child(22) {
+    border-left: 4px solid #ff85c0;
+}
+
+/* 右侧间轴设计 */
+.timeline-right {
+    position: relative;
+    padding: 30px 0 30px 60px;
+}
+
+/* 调整时间轴主线 */
+.timeline-right::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, #c41e3a, #ff6b6b, #c41e3a);
+    opacity: 0.9;
+    box-shadow: 0 0 15px rgba(196, 30, 58, 0.3);
+}
+
+/* 调整节点大小和位置 */
+.timeline-item {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -54px;
+    top: 15px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #fff;
+    border: 2px solid #c41e3a;
+    box-shadow: 0 0 0 4px rgba(196, 30, 58, 0.15),
+                0 0 10px rgba(196, 30, 58, 0.3);
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+.timeline-item:hover::before {
+    transform: scale(1.2);
+    box-shadow: 0 0 0 4px rgba(196, 30, 58, 0.2),
+                0 0 15px rgba(196, 30, 58, 0.4);
+}
+
+/* 调整内容卡片样式 */
+.timeline-content {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(196, 30, 58, 0.08);
+    border: 1px solid rgba(196, 30, 58, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* 整图片区域度 */
+.timeline-image {
+    height: 160px;
+    position: relative;
+    overflow: hidden;
+}
+
+.timeline-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+/* 调整日期样式 */
+.timeline-date {
+    position: absolute;
+    left: -140px;
+    top: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    padding: 4px 12px;
+    border-radius: 15px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+/* 根据不同类别设置年份标签颜色 */
+.timeline-item[data-category="航天成就"] .timeline-date {
+    background: linear-gradient(45deg, #1890ff, #40a9ff);
+    box-shadow: 0 3px 8px rgba(24, 144, 255, 0.25);
+}
+
+.timeline-item[data-category="抗震救灾"] .timeline-date {
+    background: linear-gradient(45deg, #52c41a, #73d13d);
+    box-shadow: 0 3px 8px rgba(82, 196, 26, 0.25);
+}
+
+.timeline-item[data-category="体育盛事"] .timeline-date {
+    background: linear-gradient(45deg, #fa8c16, #ffa940);
+    box-shadow: 0 3px 8px rgba(250, 140, 22, 0.25);
+}
+
+.timeline-item[data-category="国际盛会"] .timeline-date {
+    background: linear-gradient(45deg, #722ed1, #9254de);
+    box-shadow: 0 3px 8px rgba(114, 46, 209, 0.25);
+}
+
+.timeline-item[data-category="科技创新"] .timeline-date {
+    background: linear-gradient(45deg, #13c2c2, #36cfc9);
+    box-shadow: 0 3px 8px rgba(19, 194, 194, 0.25);
+}
+
+.timeline-item[data-category="国防建设"] .timeline-date {
+    background: linear-gradient(45deg, #f5222d, #ff4d4f);
+    box-shadow: 0 3px 8px rgba(245, 34, 45, 0.25);
+}
+
+.timeline-item[data-category="抗疫斗争"] .timeline-date {
+    background: linear-gradient(45deg, #eb2f96, #f759ab);
+    box-shadow: 0 3px 8px rgba(235, 47, 150, 0.25);
+}
+
+/* 年份标签悬浮效果 */
+.timeline-date:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+}
+
+/* 调整内容区域内边距和样式 */
+.timeline-info {
+    padding: 15px;
+}
+
+/* 时间轴分类标签基础样式 */
+.timeline-category {
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+/* 航天成就 */
+.timeline-category[data-category="航天成就"] {
+    background: rgba(24, 144, 255, 0.15);
+    color: #1890ff;
+    border: 1px solid rgba(24, 144, 255, 0.3);
+}
+
+/* 抗震救灾 */
+.timeline-category[data-category="抗震救灾"] {
+    background: rgba(82, 196, 26, 0.15);
+    color: #389e0d;
+    border: 1px solid rgba(82, 196, 26, 0.3);
+}
+
+/* 体育盛事 */
+.timeline-category[data-category="体育盛事"] {
+    background: rgba(250, 140, 22, 0.15);
+    color: #d46b08;
+    border: 1px solid rgba(250, 140, 22, 0.3);
+}
+
+/* 国际盛会 */
+.timeline-category[data-category="国际盛会"] {
+    background: rgba(114, 46, 209, 0.15);
+    color: #531dab;
+    border: 1px solid rgba(114, 46, 209, 0.3);
+}
+
+/* 科技创新 */
+.timeline-category[data-category="科技创新"] {
+    background: rgba(19, 194, 194, 0.15);
+    color: #08979c;
+    border: 1px solid rgba(19, 194, 194, 0.3);
+}
+
+/* 国防建设 */
+.timeline-category[data-category="国防建设"] {
+    background: linear-gradient(45deg, rgba(245, 34, 45, 0.15), rgba(255, 0, 0, 0.15));
+    color: #f5222d;
+    border: 1px solid rgba(245, 34, 45, 0.4);
+    text-shadow: 0 0 1px rgba(245, 34, 45, 0.1);
+}
+
+/* 抗疫斗争 */
+.timeline-category[data-category="抗疫斗争"] {
+    background: rgba(235, 47, 150, 0.15);
+    color: #c41d7f;
+    border: 1px solid rgba(235, 47, 150, 0.3);
+}
+
+/* 分类标签悬浮效果 */
+.timeline-category[data-category]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+    filter: brightness(1.1);
+}
+
+.timeline-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin: 12px 0;
+    line-height: 1.4;
+    transition: color 0.3s ease;
+}
+
+.timeline-desc {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* 悬浮效果优化 */
+.timeline-content:hover {
+    transform: translateX(8px);
+    box-shadow: 0 8px 25px rgba(196, 30, 58, 0.12);
+}
+
+.timeline-content:hover .timeline-image img {
+    transform: scale(1.05);
+}
+
+/* 添加渐变遮罩 */
+.timeline-image::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: linear-gradient(to bottom, 
+        transparent,
+        rgba(196, 30, 58, 0.1),
+        rgba(0, 0, 0, 0.3)
+    );
+}
+
+/* 添加时间轴动画效果 */
+.timeline-item {
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: fadeInRight 0.5s ease forwards;
+}
+
+@keyframes fadeInRight {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* 为每个项目添加延迟动画 */
+.timeline-item:nth-child(1) { animation-delay: 0.1s; }
+.timeline-item:nth-child(2) { animation-delay: 0.2s; }
+.timeline-item:nth-child(3) { animation-delay: 0.3s; }
+/* ... 续添加更多延迟 */
+
+/* 响应式调整 */
+@media (max-width: 1400px) {
+    .timeline-right {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .timeline-right {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 响应式设计优化 */
+@media (max-width: 1200px) {
+    .new-era-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 0 20px;
+    }
+    
+    .achievements-left {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .timeline-right {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .new-era-section {
+        padding: 40px 15px;
+    }
+
+    .new-era-title span {
+        font-size: 24px;
+        padding: 10px 20px;
+    }
+
+    .achievements-left {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline-right {
+        grid-template-columns: 1fr;
+    }
+
+    .data-card {
+        padding: 15px;
+    }
+
+    .data-icon {
+        font-size: 24px;
+    }
+
+    .data-number {
+        font-size: 28px;
+    }
+
+    .data-label {
+        font-size: 14px;
+    }
+
+    .data-subtitle {
+        font-size: 12px;
+    }
+
+    .timeline-item {
+        margin-bottom: 20px;
+    }
+
+    .timeline-content {
+        flex-direction: column;
+    }
+
+    .timeline-image {
+        width: 100%;
+        height: 180px;
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    .timeline-info {
+        width: 100%;
+    }
+
+    .timeline-title {
+        font-size: 16px;
+        margin: 8px 0;
+    }
+
+    .timeline-desc {
+        font-size: 14px;
+    }
+
+    .timeline-category {
+        font-size: 12px;
+        padding: 4px 10px;
+    }
+
+    .timeline-date {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+}
+
+/* 添加平板尺寸的优化 */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .new-era-container {
+        padding: 0 30px;
+    }
+
+    .achievements-left {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+
+    .timeline-right {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+
+    .data-card {
+        padding: 20px;
+    }
+
+    .timeline-image {
+        height: 200px;
+    }
+}
+
+/* 添加更小屏幕的优化 */
+@media (max-width: 480px) {
+    .new-era-section {
+        padding: 30px 10px;
+    }
+
+    .new-era-title span {
+        font-size: 20px;
+        padding: 8px 15px;
+    }
+
+    .data-card {
+        padding: 12px;
+    }
+
+    .timeline-image {
+        height: 160px;
+    }
+
+    .timeline-content {
+        padding: 12px;
+    }
+
+    .timeline-title {
+        font-size: 15px;
+    }
+
+    .timeline-desc {
+        font-size: 13px;
+        -webkit-line-clamp: 3;
+    }
+}
+
+/* 优化数据卡片在移动端的显示 */
+@media (max-width: 768px) {
+    .data-card {
+        flex-direction: row;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .data-icon {
+        margin-bottom: 0;
+    }
+
+    .data-content {
+        flex: 1;
+    }
+
+    .data-date {
+        position: static;
+        margin-left: auto;
+        padding: 4px 8px;
+        font-size: 12px;
+    }
+}
+
+/* 优化时间轴项目在移动端的显示 */
+@media (max-width: 768px) {
+    .timeline-item {
+        opacity: 1;
+        transform: none;
+    }
+
+    .timeline-content {
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    .timeline-info {
+        padding: 12px;
+    }
+
+    .timeline-category {
+        margin-bottom: 8px;
+    }
+} 

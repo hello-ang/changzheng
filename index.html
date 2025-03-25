@@ -1,0 +1,1532 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>红色记忆</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/carousel.css">
+    <link rel="stylesheet" href="./css/123.css">
+    <link rel="stylesheet" href="./css/new-era.css">
+
+    <link rel="stylesheet" href="./css/introduction.css">
+    <link rel="stylesheet" href="./css/stories.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="./css/loading.css">
+    <link rel="stylesheet" href="./css/historical-sites.css">
+    <link rel="stylesheet" href="./css/faith-light.css">
+
+    <script>
+        window._AMapSecurityConfig = {
+            securityJsCode: 'c7b9092c139869321cc2004fc5c63891'
+        }
+    </script>
+    <script src="https://webapi.amap.com/maps?v=2.0&key=2f2e4ef788ed19daac48f524bb526a3c"></script>
+
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+</head>
+
+<body>
+    <!-- 在body开始标签后立即添加 -->
+    <div class="loading-container">
+        <div class="glow-effect"></div>
+        <div class="light-rays"></div>
+        <div class="light-beam-container"></div>
+        <div class="particles-container"></div>
+        <div class="sparkles-container"></div>
+        <div class="decorative-stars"></div>
+        <div class="danmaku-container"></div>
+
+        <!-- 添加主题文案 -->
+        <div class="theme-text">
+            <div class="theme-title">长征精神 永志不忘</div>
+            <div class="theme-subtitle">传承红色基因 · 弘扬长征精神</div>
+        </div>
+
+        <!-- 只保留新的条形进度条 -->
+        <div class="progress-container">
+            <div class="water-wave"></div>
+            <div class="progress-text">0%</div>
+        </div>
+    </div>
+
+    <audio id="bgMusic" loop>
+        <source src="./js/白挺-你从未离去.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="music-control">
+        <i class="fas fa-volume-mute"></i>
+    </div>
+
+    <!-- LOGO区域 -->
+    <div class="logo-container">
+        <div class="logo-wrapper">
+            <img src="./导航/LOGO.png" alt="红色记忆" class="logo">
+        </div>
+    </div>
+
+    <!-- 导航区域 -->
+    <div class="nav-bg">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-row">
+                    <div class="nav-item">
+                        <a href="#" class="current"><span>首页</span></a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="../test1/1.html"><span>陕西胜利</span></a><!-- 1 -->
+                    </div>
+                    <div class="nav-item">
+                        <a href="../test2/第二组/test1.html"><span>甘肃会战</span></a><!-- 2 -->
+                    </div>
+                    <div class="nav-item">
+                        <a href="../test3/test0.html"><span>江西出发</span></a><!-- 3 -->
+                    </div>
+                    <div class="nav-item">
+                        <a href="../test4/TheLangMarchoftheFourth04/index3.html"><span>红一方面军</span></a><!-- 4 -->
+                    </div>
+                    <div class="nav-item">
+                        <a href="../test5/test5_1.html"><span>贵州遵义</span></a><!-- 5 -->
+                    </div>
+                    <div class="nav-item">
+                        <a href="../test6/hunan-demo/index.html"><span>湖南突围</span></a><!-- 6 -->
+                    </div>
+                    <div class="nav-item">
+                        <a href="../test7/长征-西康/test7.html"><span>西康翻越</span></a><!-- 7 -->
+                    </div>
+                   
+                </div>
+                <div class="nav-row">
+                    <div class="nav-item">
+                        <a href="../test8/HTML/test8.html"><span>红二方面军</span></a><!-- 8 -->
+                    </div>
+                    <div class="nav-item">
+                        <a href="../test9/index.html"><span>福建转进</span></a><!-- 9 -->
+                    </div>
+                    <div class="nav-item">
+                        <a href="../test10/test10/js/test10.html"><span>广西转战</span></a><!-- 10 -->
+                    </div>
+                    <div class="nav-item">
+                        <a href="../test11/实训/test11-1.html"><span>甘肃会战</span></a><!-- 11 -->
+                    </div>
+                    <div class="nav-item">
+                        <a href="../test12/test12.html"><span>红二十五方面军</span></a><!-- 12 -->
+                    </div>
+                    <div class="nav-item">
+                        <a href="../test13/红军长征-四川/test13.html"><span>四川征程</span></a><!-- 13 -->
+                    </div>
+                    <div class="nav-item">
+                        <a href="../test14/test14/test14.html"><span>陕北会师</span></a><!-- 14 -->
+                    </div>
+                    <div class="nav-item">
+                        <a href="../test15/15组/广东篇15.html"><span>广东北上</span></a><!-- 15 -->
+                    </div>
+                    <div class="nav-item">
+                        <a href="../test16/test16/test16-1.html"><span>云南跨越</span></a><!-- 16 -->
+                    </div>
+                </div>
+            </div>
+            <div class="menu-toggle">☰</div>
+        </nav>
+    </div>
+
+    <!-- 轮播图区域 -->
+    <main class="content">
+        <!-- 左侧垂直轮播图(1-25) -->
+        <div class="vertical-carousel left-carousel">
+            <div class="vertical-title">制作团队</div>
+            <div class="vertical-carousel-container">
+                <!-- 1-25号成员 -->
+                <div class="vertical-item">
+                    <img src="./images/前25/24247409101李幸灿/图片-36.jpg" alt="1" loading="lazy">
+                    <div class="vertical-text">李幸灿</div>
+                </div>
+                <div class="vertical-item">
+                    <img src="./images/前25/24247409102刘亚杰/图片-37.jpg" alt="2">
+                    <div class="vertical-text">刘亚杰</div>
+                </div>
+                <div class="vertical-item">
+                    <img src="./images/前25/24247409103惠盈盈/图片-1.jpg" alt="3">
+                    <div class="vertical-text">惠盈盈</div>
+                </div>
+                <div class="vertical-item">
+                    <img src="./images/前25/24247409104柳盛荣/图片-14.jpg" alt="4">
+                    <div class="vertical-text">柳盛荣</div>
+                </div>
+                <div class="vertical-item">
+                    <img src="./images/前25/24247409105张普恩/图片-40.jpg" alt="5">
+                    <div class="vertical-text">张普恩</div>
+                </div>
+                <div class="vertical-item">
+                    <img src="./images/前25/24247409106尚慧婷/图片-34.jpg" alt="6">
+                    <div class="vertical-text">尚慧婷</div>
+                </div>
+                <div class="vertical-item">
+                    <img src="./images/前25/24247409107张赟/图片-22.jpg" alt="7">
+                    <div class="vertical-text">张赟</div>
+                </div>
+                <div class="vertical-item">
+                    <img src="./images/前25/24247409108王雅晶/图片-39.jpg" alt="8">
+                    <div class="vertical-text">王雅晶</div>
+                </div>
+                <div class="vertical-item">
+                    <img src="./images/前25/24247409109赵威栋/图片-43.jpg" alt="9">
+                    <div class="vertical-text">赵威栋</div>
+                </div>
+                <div class="vertical-item">
+                    <img src="./images/前25/24247409110靳莹/图片-18.jpg" alt="10">
+                    <div class="vertical-text">靳莹</div>
+                </div>
+                <div class="vertical-item">
+                    <img src="./images/前25/张志强/图片-47.jpg" alt="11">
+                    <div class="vertical-text">张志强</div>
+                </div>
+                <div class="vertical-item">
+                    <img src="./images/前25/24247409112樊仪沁/图片-4.jpg" alt="12">
+                    <div class="vertical-text">樊仪沁</div>
+                </div>
+                <div class="vertical-item">
+                    <img src="./images/前25/24247409113马万明/图片-19.jpg" alt="13">
+                    <div class="vertical-text">马万明</div>
+                </div>
+                <div class="vertical-item">
+                    <img src="./images/前25/24247409114马淑兰/图片-33.jpg" alt="14">
+                    <div class="vertical-text">马淑兰</div>
+                </div>
+                <div class="vertical-item">
+                    <img src="./images/前25/24247409115张小翠/图片-23.jpg" alt="15">
+                    <div class="vertical-text">张小翠</div>
+                </div>
+                <div class="vertical-item">
+                    <img src="./images/前25/24247409116马宏成/图片-9.jpg" alt="16">
+                    <div class="vertical-text">马宏成</div>
+                </div>
+                <div class="vertical-item">
+                    <img src="./images/前25/24247409117朱盼盼/图片-41.jpg" alt="17">
+                    <div class="vertical-text">朱盼盼</div>
+                </div>
+                <div class="vertical-item">
+                    <img src="./images/前25/18.jpg" alt="18">
+                    <div class="vertical-text">张浩</div>
+                </div>
+                <div class="vertical-item">
+                    <img src="./images/前25/24247409119应纳川/图片-46.jpg" alt="19">
+                    <div class="vertical-text">应纳川</div>
+                </div>
+                <div class="vertical-item">
+                    <img src="./images/前25/24247409120刘玄/图片-10.jpg" alt="20">
+                    <div class="vertical-text">刘玄</div>
+                </div>
+                <div class="vertical-item">
+                    <img src="./images/前25/24247409121余阳/图片-35.jpg" alt="21">
+                    <div class="vertical-text">余阳</div>
+                </div>
+                <div class="vertical-item">
+                    <img src="./images/前25/24247409122郭凯/图片-2.jpg" alt="22">
+                    <div class="vertical-text">郭凯</div>
+                </div>
+                <div class="vertical-item">
+                    <img src="./images/前25/24247409123王麒麟/图片-44.jpg" alt="23">
+                    <div class="vertical-text">王麒麟</div>
+                </div>
+                <div class="vertical-item">
+                    <img src="./images/前25/24247409124何菲/图片-11.jpg" alt="24">
+                    <div class="vertical-text">何菲</div>
+                </div>
+                <div class="vertical-item">
+                    <img src="./images/前25/24247409125鲁旭丽/图片-26.jpg" alt="25">
+                    <div class="vertical-text">鲁旭丽</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bagua-carousel">
+            <div class="bagua-container">
+                <div class="bagua-item" data-index="0">
+                    <img src="./images/3D/1.png" alt="长征精神">
+                    <div class="bagua-text">长征精神</div>
+                </div>
+                <div class="bagua-item" data-index="1">
+                    <img src="./test/2.webp" alt="遵义会议精神">
+                    <div class="bagua-text">遵义会议精神</div>
+                </div>
+                <div class="bagua-item" data-index="2">
+                    <img src="./test/3.webp" alt="四渡赤水精神">
+                    <div class="bagua-text">四渡赤水精神</div>
+                </div>
+                <div class="bagua-item" data-index="3">
+                    <img src="./test/4.webp" alt="飞夺泸定桥精神">
+                    <div class="bagua-text">飞夺泸定桥精神</div>
+                </div>
+                <div class="bagua-item" data-index="4">
+                    <img src="./test/5.webp" alt="夹金山精神">
+                    <div class="bagua-text">夹金精神</div>
+                </div>
+                <div class="bagua-item" data-index="5">
+                    <img src="./test/6.webp" alt="腊子口精神">
+                    <div class="bagua-text">腊子口精神</div>
+                </div>
+                <div class="bagua-item" data-index="6">
+                    <img src="./test/7.webp" alt="乌江精神">
+                    <div class="bagua-text">乌江精神</div>
+                </div>
+                <div class="bagua-item" data-index="7">
+                    <img src="./test/8.webp" alt="会师精神">
+                    <div class="bagua-text">会师精神</div>
+                </div>
+            </div>
+        </div>
+        <!-- 长征简介模块 -->
+        <div class="march-introduction">
+            <div class="ripple-effect ripple-1"></div>
+            <div class="ripple-effect ripple-2"></div>
+            <div class="ripple-effect ripple-3"></div>
+
+            <h2 class="introduction-title">不朽的长征精神</h2>
+
+            <div class="introduction-container">
+                <div class="introduction-text">
+                    <div class="text-content">
+                        <p>长征，这是一次改变中国命运的伟大远征。两年间，中国工农红军以非凡的智慧和大无畏的英雄气概，完成了人类历史上最为壮丽的战略大转移。红军将士以坚定的革命信念和不屈不挠的革命精神，谱写了气壮山河的英雄史诗。
+                        </p>
+
+                        <p>在这段穿越地狱般的征程中，红军将士跨越千山万水，征服了人类历史上罕见的自然险阻。他们翻越了皑皑雪，穿越了茫茫草地，跋涉过荒漠沼泽，战胜了饥饿、寒冷和疾病，创造了人类历史上的奇迹。这不仅是一次军事转移，更是理想与信念的伟大远征。
+                        </p>
+
+                        <p>遵义会议上的历史性转折，四渡赤水的运动战典范，飞夺泸定桥的英勇壮举，强渡大渡河的惊世奇迹，这一个个震撼人心的壮举，铸就了伟大的长征精神。这种精神，是中国共产党人和红军将士用鲜血和生命写就的壮丽诗篇。
+                        </p>
+
+                        <p>今天，长征精神早已超越了时空的界限，它是中华民族不可磨灭的红色基因和精神印记。这种精神告诉我们：任何艰难险阻都阻挡不了一个民族实现复兴的脚步，任何困难都压不垮一个具有崇高理想的政党和人民。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="introduction-highlights">
+                    <div class="highlight-card">
+                        <div class="highlight-title">
+                            <i class="fas fa-flag"></i>
+                            崇高信仰
+                        </div>
+                        <div class="highlight-content">
+                            对马克思主义的坚定信仰，对社会主义和共产主义的坚定信念，是长征胜利的精神支柱。
+                        </div>
+                    </div>
+
+                    <div class="highlight-card">
+                        <div class="highlight-title">
+                            <i class="fas fa-users"></i>
+                            人民情怀
+                        </div>
+                        <div class="highlight-content">
+                            把人民利益放在第一位，一切为了人民，一切依靠人民，是长征精神的本质内涵。
+                        </div>
+                    </div>
+
+                    <div class="highlight-card">
+                        <div class="highlight-title">
+                            <i class="fas fa-fist-raised"></i>
+                            英雄气概
+                        </div>
+                        <div class="highlight-content">
+                            不怕牺牲、英勇斗争，压倒一切敌人而决不被敌人所压倒大无畏革命精神。
+                        </div>
+                    </div>
+
+                    <div class="highlight-card">
+                        <div class="highlight-title">
+                            <i class="fas fa-compass"></i>
+                            战略智慧
+                        </div>
+                        <div class="highlight-content">
+                            实事求是、独立自主、灵活机动的战略战术，体现了中国共产党人的非凡智慧。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 长征重大战役区域 -->
+        <div class="spirit-section">
+            <div class="spirit-container">
+                <div class="spirit-menu">
+                    <div class="battle-title">
+                        <h2>长征重大战役</h2>
+                        <div class="battle-subtitle">铭记历史 传承精神</div>
+                    </div>
+                    <div class="spirit-item active" data-spirit="battle1">强渡乌江</div>
+                    <div class="spirit-item" data-spirit="battle2">四渡赤水</div>
+                    <div class="spirit-item" data-spirit="battle3">巧渡金沙江</div>
+                    <div class="spirit-item" data-spirit="battle4">强渡大渡河</div>
+                    <div class="spirit-item" data-spirit="battle5">飞夺泸定桥</div>
+                    <div class="spirit-item" data-spirit="battle6">越夹金山</div>
+                    <div class="spirit-item" data-spirit="battle7">突腊子</div>
+                    <div class="spirit-item" data-spirit="battle8">会合于吴起镇</div>
+                </div>
+                <div class="spirit-content">
+                    <div class="spirit-detail active" id="battle1">
+                        <h3>强渡乌江</h3>
+                        <p>1935年1月，红军为摆脱敌人的围追堵截，在贵州省遵义县土城至大山的关一线，强渡乌江。乌江是贵州省最大的河流，江面宽阔，水流湍急。红军战士在极其艰难的条件下，利用简陋的工具，成功渡过乌江，粉碎了敌人的封锁。
+                        </p>
+                        <div class="spirit-image">
+                            <img src="./images/changzheng/强渡乌江2.jpg" alt="强渡乌江战役场景">
+                        </div>
+                        <div class="battle-info">
+                            <div class="info-item">
+                                <span class="label">时间：</span>
+                                <span class="value">1935年1月</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">地点：</span>
+                                <span class="value">贵州遵义</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">意义：</span>
+                                <span class="value">打破了敌人封锁，为遵义会议的召开创造条件</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="spirit-detail" id="battle2">
+                        <h3>四渡赤水</h3>
+                        <p>1935年1月至3月，红军在遵义会议后，为了摆脱敌人的围追堵截，四次渡赤水河，展开了一场高超的战役运动战。毛泽东同志运用灵活机动的战略战术，调动分散敌人的力量，最终取得了战役的胜利。
+                        </p>
+                        <div class="spirit-image">
+                            <img src="./images/changzheng/四渡赤水4.jpg" alt="四渡水战场景">
+                        </div>
+                        <div class="battle-info">
+                            <div class="info-item">
+                                <span class="label">时间：</span>
+                                <span class="value">1935年1月-3月</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">地点：</span>
+                                <span class="value">赤水河流域</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">意义：</span>
+                                <span class="value">展现了红军高超的战略战术力</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="spirit-detail" id="battle3">
+                        <h3>巧渡金沙江</h3>
+                        <p>1935年5月，红军为摆脱敌人的围追堵截，在云南省巧家县一带，利用当地渔民的木筏和船只，成功渡过金沙江。红战士在极其艰难的条件下，克服了江面宽阔、水流湍急等重重困难，最终胜利完成了这次渡江战役。
+                        </p>
+                        <div class="spirit-image">
+                            <img src="./images/changzheng/巧渡金沙江2.jpg" alt="巧渡金沙江战役场景">
+                        </div>
+                        <div class="battle-info">
+                            <div class="info-item">
+                                <span class="label">时间</span>
+                                <span class="value">1935年5月</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">地点</span>
+                                <span class="value">云南巧家县</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">意义</span>
+                                <span class="value">打开了进军川西北的通道</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="spirit-detail" id="battle4">
+                        <h3>强渡大渡河</h3>
+                        <p>1935年5月25日，红军在安顺场强渡大渡河。面对敌人的重兵把守，22位勇士冒着枪林弹雨，驾驶木船强渡大渡河，为大军渡河开辟了通道。这次战役被誉为"中国革命史上个奇迹"</p>
+                        <div class="spirit-image">
+                            <img src="./images/changzheng/强渡大渡河4.jpg" alt="强渡大渡河战役场景">
+                        </div>
+                        <div class="battle-info">
+                            <div class="info-item">
+                                <span class="label">时间</span>
+                                <span class="value">1935年5月25日</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">地点</span>
+                                <span class="value">四川安顺场</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">意义</span>
+                                <span class="value">粉碎了敌人围堵红军于大渡河以南的企图</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="spirit-detail" id="battle5">
+                        <h3>飞夺泸定桥</h3>
+                        <p>1935年5月29日，红军在泸定桥展开了惊心动魄的战斗。22位勇士在敌人的密集火力下，冒着生命危险，攀着铁索飞渡泸定成功夺取了这座具有重要战略意义的桥梁，创造了中国军事史上的奇迹。
+                        </p>
+                        <div class="spirit-image">
+                            <img src="./images/changzheng/飞夺泸定桥3.jpg" alt="飞夺泸定桥战役场景">
+                        </div>
+                        <div class="battle-info">
+                            <div class="info-item">
+                                <span class="label">时间</span>
+                                <span class="value">1935年5月29日</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">地点</span>
+                                <span class="value">四川泸定</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">意义</span>
+                                <span class="value">为红军北上开辟了通道，成为长征中最为传奇的战役之一</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="spirit-detail" id="battle6">
+                        <h3>越夹金山</h3>
+                        <p>1935年6月，红军在翻越夹金山时，面临着恶劣的自然环境海拔4000多米的高山，冰雪覆盖，空气稀薄，红军将士顶着狂风暴雪克服了重重困难，最终胜利翻过了这座极其险峻的雪山。</p>
+                        <div class="spirit-image">
+                            <img src="./images/changzheng/翻越夹金山1.jpg" alt="翻越夹金山战役场景">
+                        </div>
+                        <div class="battle-info">
+                            <div class="info-item">
+                                <span class="label">时间</span>
+                                <span class="value">1935年6月</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">地点</span>
+                                <span class="value">四川夹金山</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">意义</span>
+                                <span class="value">突破了敌人的重重封锁，展现了红军将士不畏艰险的革命精神</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="spirit-detail" id="battle7">
+                        <h3>突破腊子口</h3>
+                        <p>1935年9月，红军在突破腊子口时，面对敌人的重兵把守和险要地形，采取迂回包抄的战术，成功突破了这道天险。红军将士在极艰苦的条件下，展现了非凡的战斗意和智慧。</p>
+                        <div class="spirit-image">
+                            <img src="./images/changzheng/突破腊子口5.jpg" alt="突破腊子口战役场景">
+                        </div>
+                        <div class="battle-info">
+                            <div class="info-item">
+                                <span class="label">时间</span>
+                                <span class="value">1935年9月</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">地点</span>
+                                <span class="value">甘肃腊子口</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">意义</span>
+                                <span class="value">打开了进入甘的道，为长征胜利奠定了基础</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="spirit-detail" id="battle8">
+                        <h3>会师吴起镇</h3>
+                        <p>1935年10月，红一方面军在吴起镇与陕北红军胜利会师，标志着长征的胜利结束。这次会师不仅巩固了陕北革命根据地，也为后来的抗日战争奠定了重要基础。</p>
+                        <div class="spirit-image">
+                            <img src="./images/changzheng/会师吴起镇5.jpg" alt="会师吴起镇战役场景">
+                        </div>
+                        <div class="battle-info">
+                            <div class="info-item">
+                                <span class="label">时间</span>
+                                <span class="value">1935年10月</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">地点</span>
+                                <span class="value">陕西吴起镇</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">意义</span>
+                                <span class="value">标志长征的胜利结束，为建立抗日民族统一战线创造了条件</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 长征故事集模块 -->
+        <div class="march-stories">
+            <div class="stories-header">
+                <h2 class="stories-title">长征故事集</h2>
+                <p class="stories-subtitle">铭记历史 传承精神 永远不忘</p>
+            </div>
+
+            <div class="stories-container">
+                <div class="story-card">
+                    <div class="story-image">
+                        <img src="./images/故事/会师.webp" alt="三军大会师">
+                        <div class="story-tag">感人故事</div>
+                    </div>
+                    <div class="story-content">
+                        <h3>三军大会师</h3>
+                        <p class="story-brief">1936年10月，红一、二、四方面军在甘肃会宁胜利会师。这一刻，是多少将士魂牵梦绕的期盼...</p>
+                        <div class="story-footer">
+                            <span class="story-date">1936年10月</span>
+                            <button class="read-more">阅读更多</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="story-card">
+                    <div class="story-image">
+                        <img src="./images/故事/绳子.png" alt="草地夜行军">
+                        <div class="story-tag">感人故事</div>
+                    </div>
+                    <div class="story-content">
+                        <h3>草地夜行军</h3>
+                        <p class="story-brief">在茫茫草地上，红军战士们手挽手，肩并肩，用绳子连成一串，互相支撑，共同前进...</p>
+                        <div class="story-footer">
+                            <span class="story-date">1935年8月</span>
+                            <button class="read-more">阅读更多</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="story-card">
+                    <div class="story-image">
+                        <img src="./images/故事/奶奶.jpg" alt="军民鱼水情">
+                        <div class="story-tag">感人故事</div>
+                    </div>
+                    <div class="story-content">
+                        <h3>军民鱼水情</h3>
+                        <p class="story-brief">一位老乡用仅剩的一碗米，熬成稀粥给疲惫的红军战士喝，这份情谊永远铭记在心...</p>
+                        <div class="story-footer">
+                            <span class="story-date">1935年5月</span>
+                            <button class="read-more">阅读更多</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="story-card">
+                    <div class="story-image">
+                        <img src="./images/故事/火.webp" alt="雪山上的篝火">
+                        <div class="story-tag">感人故事</div>
+                    </div>
+                    <div class="story-content">
+                        <h3>雪山上的篝火</h3>
+                        <p class="story-brief">在茫茫雪山之巅，战士们围在篝火旁，互相取暖，共同坚持，誓死也要翻越这座雪山...</p>
+                        <div class="story-footer">
+                            <span class="story-date">1935年6月</span>
+                            <button class="read-more">阅读更多</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 长征统计数据 -->
+        <div class="march-statistics">
+            <div class="statistics-container">
+                <div class="stats-panel">
+                    <h2 class="stats-title">长征统计数据</h2>
+                    <div class="stats-grid">
+                        <div class="stats-item">
+                            <div class="stats-value">12500</div>
+                            <div class="stats-label">总行程(公里)</div>
+                        </div>
+                        <div class="stats-item">
+                            <div class="stats-value">11</div>
+                            <div class="stats-label">跨越省份</div>
+                        </div>
+                        <div class="stats-item">
+                            <div class="stats-value">18</div>
+                            <div class="stats-label">越大山</div>
+                        </div>
+                        <div class="stats-item">
+                            <div class="stats-value">24</div>
+                            <div class="stats-label">跨越河</div>
+                        </div>
+                    </div>
+                    <div class="stats-details">
+                        <h3>经过省份</h3>
+                        <p>江西、福建、广东、湖南、广西、贵州、云南、四川、甘肃、陕西、河南</p>
+                        <h3>主要山脉</h3>
+                        <p>武夷山、罗霄山、南岭、苗岭、蒙山、大雪山、岷山、六盘山等</p>
+                        <h3>主要江河</h3>
+                        <p>乌江、赤水河、金沙江、大渡河、嘉陵江、湘江等</p>
+                    </div>
+                </div>
+                <div class="map-panel">
+                    <div id="marchMap" class="march-map"></div>
+                    <div class="route-info">
+                        <div class="route-item">
+                            <span class="route-line" style="border-top: 2px dashed #c41e3a"></span>
+                            <span class="route-text">中央红军</span>
+                        </div>
+                        <div class="route-item">
+                            <span class="route-line" style="border-top: 2px dashed #1874CD"></span>
+                            <span class="route-text">红四方面军</span>
+                        </div>
+                        <div class="route-item">
+                            <span class="route-line" style="border-top: 2px dashed #228B22"></span>
+                            <span class="route-text">红二方面军</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 红色文史馆区域 -->
+        <div class="museum-section">
+            <div class="museum-title">红色文史馆</div>
+
+            <!-- 上半部分 -->
+            <div class="museum-top">
+                <!-- 红色书籍区 -->
+                <div class="red-books">
+                    <div class="books-header">
+                        <h3 class="books-title">
+                            <i class="fas fa-book"></i>
+                            红色文献库
+                        </h3>
+                    </div>
+                    <div class="books-list">
+                        <!-- 第一本书 -->
+                        <div class="book-item">
+                            <div class="book-container">
+                                <div class="book-cover">
+                                    <img src="./images/红色文史/遵义.jpg" alt="遵义会议文献">
+                                </div>
+                                <div class="book-info">
+                                    <div class="book-title">遵义会议文献</div>
+                                    <div class="book-author">中共中央文献研究室</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 第二本书 -->
+                        <div class="book-item">
+                            <div class="book-container">
+                                <div class="book-cover">
+                                    <img src="./images/红色文史/毛泽东.jpg" alt="毛泽东选集">
+                                </div>
+                                <div class="book-info">
+                                    <div class="book-title">毛泽东选集</div>
+                                    <div class="book-author"> 东</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 第三本书 -->
+                        <div class="book-item">
+                            <div class="book-container">
+                                <div class="book-cover">
+                                    <img src="./images/红色文史/四度赤水.webp" alt="四渡赤水">
+                                </div>
+                                <div class="book-info">
+                                    <div class="book-title">四渡赤水</div>
+                                    <div class="book-author">中共党史出版社</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 第四本书 -->
+                        <div class="book-item">
+                            <div class="book-container">
+                                <div class="book-cover">
+                                    <img src="./images/红色文史/飞夺.jpg" alt="飞夺泸定桥">
+                                </div>
+                                <div class="book-info">
+                                    <div class="book-title">飞夺泸定桥</div>
+                                    <div class="book-author">军事科学出版社</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 第五本书 -->
+                        <div class="book-item">
+                            <div class="book-container">
+                                <div class="book-cover">
+                                    <img src="./images/红色文史/长征史.jpg" alt="长征史话">
+                                </div>
+                                <div class="book-info">
+                                    <div class="book-title">长征史话</div>
+                                    <div class="book-author">人民出版社</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 第六本书 -->
+                        <div class="book-item">
+                            <div class="book-container">
+                                <div class="book-cover">
+                                    <img src="./images/红色文史/故事.jpg" alt="长征的故事">
+                                </div>
+                                <div class="book-info">
+                                    <div class="book-title">长征的故事</div>
+                                    <div class="book-author">人民文学出版社</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 第七本书 -->
+                        <div class="book-item">
+                            <div class="book-container">
+                                <div class="book-cover">
+                                    <img src="./images/红色文史/光芒.jpg" alt="长征精神绽放光芒">
+                                </div>
+                                <div class="book-info">
+                                    <div class="book-title">长征精神永放光芒</div>
+                                    <div class="book-author">中央文献出版社</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 第八本书 -->
+                        <div class="book-item">
+                            <div class="book-container">
+                                <div class="book-cover">
+                                    <img src="./images/红色文史/画册.webp" alt="长征画册">
+                                </div>
+                                <div class="book-info">
+                                    <div class="book-title">长征画册</div>
+                                    <div class="book-author">人民美术出版社</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 第九本书 -->
+                        <div class="book-item">
+                            <div class="book-container">
+                                <div class="book-cover">
+                                    <img src="./images/红色文史/日记.png" alt="长征日记">
+                                </div>
+                                <div class="book-info">
+                                    <div class="book-title">长征日记</div>
+                                    <div class="book-author">解放军出版社</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 革命报刊区 -->
+                <div class="red-newspapers">
+                    <h3 class="section-title">革命报刊</h3>
+                    <div class="newspaper-container">
+                        <div class="newspaper-item">
+                            <div class="newspaper-header">
+                                <h2>红色中华</h2>
+                                <div class="newspaper-date">1931年12月11日</div>
+                            </div>
+                            <div class="newspaper-divider"></div>
+                            <div class="newspaper-content">
+                                中央苏区的重要报刊，是中华苏维埃共和国临时中央政府的机关报。它及时报道了苏区的建设成就和红军的战斗胜利，对宣传革命、鼓舞士气发挥了重要作用。
+                            </div>
+                        </div>
+
+                        <div class="newspaper-item">
+                            <div class="newspaper-header">
+                                <h2>新华日报</h2>
+                                <div class="newspaper-date">1938年1月11日</div>
+                            </div>
+                            <div class="newspaper-divider"></div>
+                            <div class="newspaper-content">
+                                中国共产党创办的第一份全国性日报，在抗日战争时期发挥了重要的舆论宣传作用，是党联系人民群众的重要桥梁。
+                            </div>
+                        </div>
+
+                        <div class="newspaper-item">
+                            <div class="newspaper-header">
+                                <h2>解放日报</h2>
+                                <div class="newspaper-date">1941年5月16日</div>
+                            </div>
+                            <div class="newspaper-divider"></div>
+                            <div class="newspaper-content">
+                                中共中央的机关报，在延安创刊。它系统地宣传了党的路线、方针、政策，对指导全党全军的工作起到了重要作用。
+                            </div>
+                        </div>
+
+                        <div class="newspaper-item">
+                            <div class="newspaper-header">
+                                <h2>人民日报</h2>
+                                <div class="newspaper-date">1948年6月15日</div>
+                            </div>
+                            <div class="newspaper-divider"></div>
+                            <div class="newspaper-content">
+                                创刊于华北解放区，是中国共产党中央委员会的机关报。它见证了中国革命的胜利进程，记录了新中国的诞生和发展历程，是党和人民的喉舌。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 下半部分 -->
+            <div class="museum-bottom">
+                <!-- 文物展示区 -->
+                <div class="cultural-relics">
+                    <h3 class="section-title">
+                        <i class="fas fa-landmark"></i>
+                        文物展示
+                    </h3>
+                    <div class="relics-container">
+                        <div class="relic-item">
+                            <img src="./images/文物展示/帽子.webp" alt="红军军帽">
+                            <div class="relic-info">
+                                <div class="relic-name">红军军帽</div>
+                                <div class="relic-desc">
+                                    这是长征时期红军战士佩戴的军帽，采用优棉布制成，帽檐上缀有红五星。这种军帽不仅是红军战士的标志性装备，更承载着革命的精神和信念。它经历了漫长的长征路程，见证了红军将士翻山越岭、浴血奋战的艰苦历程。
+                                </div>
+                                <div class="relic-date">1934-1935年 长征时期</div>
+                            </div>
+                        </div>
+                        <div class="relic-item">
+                            <img src="./images/文物展示/望远镜.jpg" alt="战地望远镜">
+                            <div class="relic-info">
+                                <div class="relic-name">战地望远镜</div>
+                                <div class="relic-desc">
+                                    是红军长征时期使用的德制蔡司望远镜，是当最先的光学仪器之一。它曾被红军指挥员用于侦察地形、观察敌情，四渡赤水、强渡大渡河等重要战役中发挥了关键作用。这件文物不仅展现了红军的军事智慧，也反映了当时的作战条件。
+                                </div>
+                                <div class="relic-date">1934-1935年 长征时期</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 历史档案区 -->
+                <div class="historical-archives">
+                    <h3 class="section-title">
+                        <i class="fas fa-archive"></i>
+                        历史档案
+                    </h3>
+                    <div class="archives-container">
+                        <div class="archive-item">
+                            <div class="archive-date">1927年8月1日</div>
+                            <div class="archive-title">南昌起义</div>
+                            <div class="archive-desc">
+                                这是中国共产党领导的第一次武装起义。在周恩来、贺龙、叶挺、朱德等同志的领导下，革命军两万余人打响了武装反抗国民党反动派的第一枪。这次起义打开了"以武装的革命反对武装反革命"的新局面，是中国共产党独立领导革命战争创人民军队的开端。
+                            </div>
+                            <div class="archive-location">江西省南昌市八一广场</div>
+                        </div>
+                        <div class="archive-item">
+                            <div class="archive-date">1928年6月</div>
+                            <div class="archive-title">井冈山革命根据地</div>
+                            <div class="archive-desc">
+                                泽东同率领秋收起义部队到达井冈山，开创了中国第一个农村革命根据地。在这里，红军探索出了"村包城市、武装夺取政权"的革命道路，创立了"坚持革命战争、实行土地革命、建立革命政府"的农村革命理论，为后来的长征和抗日战争奠定了基础。三位一体的斗争模式，为中国革命的胜利开辟了正确道路。
+                            </div>
+                            <div class="archive-location">江西省井冈山市茨坪</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 长征遗址今昔对比模块 -->
+        <div class="historical-sites-comparison">
+            <h2 class="sites-title">长征遗址今昔对比</h2>
+            <div class="sites-container">
+                <!-- 遵义会议旧址 -->
+                <div class="comparison-item">
+                    <div class="comparison-wrapper">
+                        <div class="image-container past">
+                            <img src="./images/旧址/1-1.jpg" alt="遵义会议旧址历史照片">
+                            <span class="time-label">1935年</span>
+                        </div>
+                        <div class="image-container present">
+                            <img src="./images/旧址/1-2.png" alt="遵义会议旧址现状">
+                            <span class="time-label">2024年</span>
+                        </div>
+                    </div>
+                    <div class="site-info">
+                        <h3>遵义会议旧址</h3>
+                        <p>从一座普通的黔北民居，到今天的革命圣地，遵义会议旧址见证了中国革命从挫折走向胜利的伟大转折。如今，这里已成为重要的爱国主义教育基地，每年接待数百万游客前来参观学习。</p>
+                    </div>
+                </div>
+
+                <!-- 泸定桥 -->
+                <div class="comparison-item">
+                    <div class="comparison-wrapper">
+                        <div class="image-container past">
+                            <img src="./images/旧址/2-1.webp" alt="泸定桥历史照片">
+                            <span class="time-label">1935年</span>
+                        </div>
+                        <div class="image-container present">
+                            <img src="./images/旧址/2-2.webp" alt="泸定桥现状">
+                            <span class="time-label">2024年</span>
+                        </div>
+                    </div>
+                    <div class="site-info">
+                        <h3>泸定桥</h3>
+                        <p>从血与火的战场，到和平年代的红色旅游胜地，泸定桥不仅保留了原有的铁索结构，还增设了相关展览设施。这座见证红军飞夺泸定桥壮举的古桥，现已成为传承红色基因的重要载体。</p>
+                    </div>
+                </div>
+
+                <!-- 夹金山 -->
+                <div class="comparison-item">
+                    <div class="comparison-wrapper">
+                        <div class="image-container past">
+                            <img src="./images/旧址/3-1.webp" alt="夹金山历史照片">
+                            <span class="time-label">1935年</span>
+                        </div>
+                        <div class="image-container present">
+                            <img src="./images/旧址/3-2.jpg" alt="夹金山现状">
+                            <span class="time-label">2024年</span>
+                        </div>
+                    </div>
+                    <div class="site-info">
+                        <h3>夹金山</h3>
+                        <p>从险峻的雪山险阻，到今天的红色教育基地，夹金山沿途已建有多处纪念设施和观景点。这里不仅保留了当年红军翻越的原貌，还建设了红军长征纪念馆，让后人能够更好地了解这段艰苦卓绝的历史。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 新长征新时代模块 -->
+        <div class="new-era-section">
+            <h1 class="new-era-title">
+                <span>新长征新时代</span>
+            </h1>
+
+            <div class="new-era-container">
+                <!-- 左侧数据卡片区域添加更多内容 -->
+                <div class="achievements-left">
+                    <div class="data-card">
+                        <i class="fas fa-clock data-icon"></i>
+                        <div class="data-content">
+                            <div class="data-number">40</div>
+                            <div class="data-label">改革开放</div>
+                            <div class="data-subtitle">砥砺前行</div>
+                        </div>
+                        <div class="data-date">2018年</div>
+                    </div>
+                    <div class="data-card">
+                        <i class="fas fa-water data-icon"></i>
+                        <div class="data-content">
+                            <div class="data-number">7000</div>
+                            <div class="data-label">蛟龙号</div>
+                            <div class="data-subtitle">深海探测</div>
+                        </div>
+                        <div class="data-date">2012年</div>
+                    </div>
+                    <div class="data-card">
+                        <i class="fas fa-flag data-icon"></i>
+                        <div class="data-content">
+                            <div class="data-number">2035</div>
+                            <div class="data-label">奋斗目标</div>
+                            <div class="data-subtitle">强国梦想</div>
+                        </div>
+                        <div class="data-date">2023年</div>
+                    </div>
+                    <div class="data-card">
+                        <i class="fas fa-plane data-icon"></i>
+                        <div class="data-content">
+                            <div class="data-number">C919</div>
+                            <div class="data-label">大飞机</div>
+                            <div class="data-subtitle">国产创新</div>
+                        </div>
+                        <div class="data-date">2023年</div>
+                    </div>
+                    <div class="data-card">
+                        <i class="fas fa-rocket data-icon"></i>
+                        <div class="data-content">
+                            <div class="data-number">400</div>
+                            <div class="data-label">空间站</div>
+                            <div class="data-subtitle">吨级载荷</div>
+                        </div>
+                        <div class="data-date">2023年</div>
+                    </div>
+                    <div class="data-card">
+                        <i class="fas fa-microchip data-icon"></i>
+                        <div class="data-content">
+                            <div class="data-number">7</div>
+                            <div class="data-label">纳米级</div>
+                            <div class="data-subtitle">芯片工艺</div>
+                        </div>
+                        <div class="data-date">2023年</div>
+                    </div>
+                    <div class="data-card">
+                        <i class="fas fa-train data-icon"></i>
+                        <div class="data-content">
+                            <div class="data-number">350</div>
+                            <div class="data-label">高铁速度</div>
+                            <div class="data-subtitle">公里/小时</div>
+                        </div>
+                        <div class="data-date">2023年</div>
+                    </div>
+                    <div class="data-card">
+                        <i class="fas fa-broadcast-tower data-icon"></i>
+                        <div class="data-content">
+                            <div class="data-number">1000</div>
+                            <div class="data-label">5G基站</div>
+                            <div class="data-subtitle">万个覆盖</div>
+                        </div>
+                        <div class="data-date">2023年</div>
+                    </div>
+                    <div class="data-card">
+                        <i class="fas fa-industry data-icon"></i>
+                        <div class="data-content">
+                            <div class="data-number">121</div>
+                            <div class="data-label">世界500强</div>
+                            <div class="data-subtitle">中国企业数量</div>
+                        </div>
+                        <div class="data-date">2023年</div>
+                    </div>
+                    <div class="data-card">
+                        <i class="fas fa-graduation-cap data-icon"></i>
+                        <div class="data-content">
+                            <div class="data-number">46</div>
+                            <div class="data-label">高等教育</div>
+                            <div class="data-subtitle">毛入学率(%)</div>
+                        </div>
+                        <div class="data-date">2023年</div>
+                    </div>
+                    <div class="data-card">
+                        <i class="fas fa-chart-line data-icon"></i>
+                        <div class="data-content">
+                            <div class="data-number">114</div>
+                            <div class="data-label">GDP总量</div>
+                            <div class="data-subtitle">万亿元</div>
+                        </div>
+                        <div class="data-date">2023年</div>
+                    </div>
+                    <div class="data-card">
+                        <i class="fas fa-seedling data-icon"></i>
+                        <div class="data-content">
+                            <div class="data-number">25</div>
+                            <div class="data-label">生态文明</div>
+                            <div class="data-subtitle">森林覆盖率(%)</div>
+                        </div>
+                        <div class="data-date">2023年</div>
+                    </div>
+                    <div class="data-card">
+                        <i class="fas fa-subway data-icon"></i>
+                        <div class="data-content">
+                            <div class="data-number">4.5</div>
+                            <div class="data-label">高铁里程</div>
+                            <div class="data-subtitle">万公里</div>
+                        </div>
+                        <div class="data-date">2023年</div>
+                    </div>
+                    <div class="data-card">
+                        <i class="fas fa-atom data-icon"></i>
+                        <div class="data-content">
+                            <div class="data-number">55</div>
+                            <div class="data-label">核电机组</div>
+                            <div class="data-subtitle">运行数量</div>
+                        </div>
+                        <div class="data-date">2023年</div>
+                    </div>
+                    <div class="data-card">
+                        <i class="fas fa-satellite data-icon"></i>
+                        <div class="data-content">
+                            <div class="data-number">500</div>
+                            <div class="data-label">北斗卫星</div>
+                            <div class="data-subtitle">定位精度(米)</div>
+                        </div>
+                        <div class="data-date">2023年</div>
+                    </div>
+                    <div class="data-card">
+                        <i class="fas fa-solar-panel data-icon"></i>
+                        <div class="data-content">
+                            <div class="data-number">3.2</div>
+                            <div class="data-label">光伏装机</div>
+                            <div class="data-subtitle">亿千瓦</div>
+                        </div>
+                        <div class="data-date">2023年</div>
+                    </div>
+                    <div class="data-card">
+                        <i class="fas fa-wind data-icon"></i>
+                        <div class="data-content">
+                            <div class="data-number">6.8</div>
+                            <div class="data-label">风电装机</div>
+                            <div class="data-subtitle">亿千瓦</div>
+                        </div>
+                        <div class="data-date">2023年</div>
+                    </div>
+                    <div class="data-card">
+                        <i class="fas fa-robot data-icon"></i>
+                        <div class="data-content">
+                            <div class="data-number">32.5</div>
+                            <div class="data-label">工业机器人</div>
+                            <div class="data-subtitle">万台保有量</div>
+                        </div>
+                        <div class="data-date">2023年</div>
+                    </div>
+                    <div class="data-card">
+                        <i class="fas fa-network-wired data-icon"></i>
+                        <div class="data-content">
+                            <div class="data-number">12</div>
+                            <div class="data-label">互联网经济</div>
+                            <div class="data-subtitle">万亿规模</div>
+                        </div>
+                        <div class="data-date">2023年</div>
+                    </div>
+                    <div class="data-card">
+                        <i class="fas fa-car data-icon"></i>
+                        <div class="data-content">
+                            <div class="data-number">1400</div>
+                            <div class="data-label">新能源汽车</div>
+                            <div class="data-subtitle">万辆保有量</div>
+                        </div>
+                        <div class="data-date">2023年</div>
+                    </div>
+                </div>
+
+                <!-- 右侧时间轴 -->
+                <div class="timeline-right">
+                    <!-- 2003年 神舟五号 -->
+                    <div class="timeline-item" data-category="航天成就">
+                        <div class="timeline-date">2003年</div>
+                        <div class="timeline-content">
+                            <div class="timeline-image">
+                                <img src="./images/新时代/五号.webp" alt="神舟五号">
+                            </div>
+                            <div class="timeline-info">
+                                <span class="timeline-category" data-category="航天成就">航天成就</span>
+                                <div class="timeline-title">神舟五号首次载人航天</div>
+                                <div class="timeline-desc">神舟五号的成功发射和收回，标志着中国成为世界上第三个独立掌握载人航天技术的国家。</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2008年 汶川地震 -->
+                    <div class="timeline-item" data-category="抗震救灾">
+                        <div class="timeline-date">2008年5月</div>
+                        <div class="timeline-content">
+                            <div class="timeline-image">
+                                <img src="./images/新时代/汶川.webp" alt="汶川地震救援">
+                            </div>
+                            <div class="timeline-info">
+                                <span class="timeline-category" data-category="抗震救灾">抗震救灾</span>
+                                <div class="timeline-title">汶川地震举国抗震</div>
+                                <div class="timeline-desc">
+                                    2008年5月12日，四川省汶川县发生了8.0级地震，全国人民团结一心，众志成城，打响了一场没有硝烟的人民战争，展现了强大的凝聚力和人道精神。</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2008年 北京奥运会 -->
+                    <div class="timeline-item" data-category="体育盛事">
+                        <div class="timeline-date">2008年8月</div>
+                        <div class="timeline-content">
+                            <div class="timeline-image">
+                                <img src="./images/新时代/北京.webp" alt="北京奥运会">
+                            </div>
+                            <div class="timeline-info">
+                                <span class="timeline-category" data-category="体育盛事">体育盛事</span>
+                                <div class="timeline-title">北京奥运会成功举办</div>
+                                <div class="timeline-desc">2008年8月8日至24日，中国在北京成功举办第29届奥林匹克运动会，展示了中国的综合国力和国际影响力。</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2010年 上海世博会 -->
+                    <div class="timeline-item" data-category="国际盛会">
+                        <div class="timeline-date">2010年5月</div>
+                        <div class="timeline-content">
+                            <div class="timeline-image">
+                                <img src="./images/新时代/上海.webp" alt="上海世博会">
+                            </div>
+                            <div class="timeline-info">
+                                <span class="timeline-category" data-category="国际盛会">国际盛会</span>
+                                <div class="timeline-title">上海世博会</div>
+                                <div class="timeline-desc">2010年5月1日至10月31日，上海世博会成功举办，展示了中国的现代化建设成就和国家形象。</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2012年 蛟龙号 -->
+                    <div class="timeline-item" data-category="科技创新">
+                        <div class="timeline-date">2012年</div>
+                        <div class="timeline-content">
+                            <div class="timeline-image">
+                                <img src="./images/新时代/蛟龙号.jpg" alt="蛟龙号">
+                            </div>
+                            <div class="timeline-info">
+                                <span class="timeline-category" data-category="科技创新">科技创新</span>
+                                <div class="timeline-title">蛟龙号深海探测</div>
+                                <div class="timeline-desc">蛟龙号是中国第一艘深海载人潜水器，它的成功下潜至7000米深海，刷新了中国深海探测的记录。</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 继续添其他事件... -->
+                    <!-- 2012年 辽宁舰服役 -->
+                    <div class="timeline-item" data-category="国防建设">
+                        <div class="timeline-date">2012年9月</div>
+                        <div class="timeline-content">
+                            <div class="timeline-image">
+                                <img src="./images/新时代/辽宁舰.jpg" alt="辽宁舰">
+                            </div>
+                            <div class="timeline-info">
+                                <span class="timeline-category" data-category="国防建设">国防建设</span>
+                                <div class="timeline-title">辽宁舰正式服役</div>
+                                <div class="timeline-desc">2012年9月25日，中国第一艘航母辽宁舰正式服役，标志着中国海军建设迈入了新的阶段。</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2017年 歼-20服役 -->
+                    <div class="timeline-item" data-category="国防建设">
+                        <div class="timeline-date">2017年</div>
+                        <div class="timeline-content">
+                            <div class="timeline-image">
+                                <img src="./images/新时代/20.webp" alt="歼-20战机">
+                            </div>
+                            <div class="timeline-info">
+                                <span class="timeline-category" data-category="国防建设">国防建设</span>
+                                <div class="timeline-title">歼-20战斗机正式服役</div>
+                                <div class="timeline-desc">2017年，中国自主研发的第五代战斗机歼-20正式服役，提升了中国空军的战斗力。</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2020年 抗击新冠疫情 -->
+                    <div class="timeline-item" data-category="抗疫斗争">
+                        <div class="timeline-date">2020年</div>
+                        <div class="timeline-content">
+                            <div class="timeline-image">
+                                <img src="./images/新时代/疫情.jpeg" alt="抗击疫情">
+                            </div>
+                            <div class="timeline-info">
+                                <span class="timeline-category" data-category="抗疫斗争">抗疫斗争</span>
+                                <div class="timeline-title">抗击新冠疫情</div>
+                                <div class="timeline-desc">在新冠疫情爆发期间，全国人民团结一心，众志成城，打响了一场没有硝烟的人民战争。</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2022年 C919首飞 -->
+                    <div class="timeline-item" data-category="科技创新">
+                        <div class="timeline-date">2022年</div>
+                        <div class="timeline-content">
+                            <div class="timeline-image">
+                                <img src="./images/新时代/飞机.webp" alt="C919大飞机">
+                            </div>
+                            <div class="timeline-info">
+                                <span class="timeline-category" data-category="科技创新">科技创新</span>
+                                <div class="timeline-title">C919大飞机首飞成功</div>
+                                <div class="timeline-desc">C919是中国自主研发的大型客机，它的首飞成功标志着中国在民用航空领域取得了重大突破。</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2022年 福建舰下水 -->
+                    <div class="timeline-item" data-category="国防建设">
+                        <div class="timeline-date">2022年6月</div>
+                        <div class="timeline-content">
+                            <div class="timeline-image">
+                                <img src="./images/新时代/福建.webp" alt="福建舰下水">
+                            </div>
+                            <div class="timeline-info">
+                                <span class="timeline-category" data-category="国防建设">国防建设</span>
+                                <div class="timeline-title">首艘国产航母福建舰下水</div>
+                                <div class="timeline-desc">我国第三艘航空母舰福建舰于2022年6月17日正式下水，这是我国完全自主设计建造的首艘弹射型航空母舰。</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2023年 空间站建成 -->
+                    <div class="timeline-item" data-category="航天成就">
+                        <div class="timeline-date">2023年</div>
+                        <div class="timeline-content">
+                            <div class="timeline-image">
+                                <img src="./images/新时代/空间站.webp" alt="中国空间站">
+                            </div>
+                            <div class="timeline-info">
+                                <span class="timeline-category" data-category="航天成就">航天成就</span>
+                                <div class="timeline-title">空间站全面建成</div>
+                                <div class="timeline-desc">
+                                    中国空间站的全面建成，是中国航天事业的又一重大成就。它不仅提升了中国在空间科学领域的研究能力，也为人类探索宇宙提供了新的平台。</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 在新时代新长征模块中添加信仰之光模块 -->
+            <div class="data-visualization">
+                <!-- 原有的数据展示内容 -->
+            </div>
+
+            <!-- 修改信仰之光模块的结构和内容 -->
+            <div class="faith-light-section">
+                <h2 class="faith-title">信仰之光 永照征程</h2>
+                
+                <!-- 长明灯容器 -->
+                <div class="eternal-lamp-container">
+                    <div class="eternal-lamp">
+                        <div class="lamp-glass"></div>
+                        <div class="lamp-base"></div>
+                    </div>
+                    
+                    <!-- 添加标语容器 -->
+                    <div class="faith-quotes"></div>
+                </div>
+
+                <!-- 时间轴节点 -->
+                <div class="march-path">
+                    <div class="path-nodes">
+                        <div class="path-node">
+                            <div class="node-dot"></div>
+                            <div class="node-content">
+                                <div class="node-text">1934.10</div>
+                                <div class="node-desc">于都集结</div>
+                                <div class="node-detail">踏上征程</div>
+                            </div>
+                        </div>
+                        <div class="path-node">
+                            <div class="node-dot"></div>
+                            <div class="node-content">
+                                <div class="node-text">1935.01</div>
+                                <div class="node-desc">遵义会议</div>
+                                <div class="node-detail">伟大转折</div>
+                            </div>
+                        </div>
+                        <div class="path-node">
+                            <div class="node-dot"></div>
+                            <div class="node-content">
+                                <div class="node-text">1935.05</div>
+                                <div class="node-desc">飞夺泸定</div>
+                                <div class="node-detail">勇往直前</div>
+                            </div>
+                        </div>
+                        <div class="path-node">
+                            <div class="node-dot"></div>
+                            <div class="node-content">
+                                <div class="node-text">1935.10</div>
+                                <div class="node-desc">翻越雪山</div>
+                                <div class="node-detail">不畏艰险</div>
+                            </div>
+                        </div>
+                        <div class="path-node">
+                            <div class="node-dot"></div>
+                            <div class="node-content">
+                                <div class="node-text">1936.10</div>
+                                <div class="node-desc">胜利会师</div>
+                                <div class="node-detail">光辉千秋</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 继续其他新时代新长征的内容 -->
+            <div class="timeline-right">
+                <!-- 原有的时间轴内容 -->
+            </div>
+        </div>
+        <!-- 右侧垂直轮播图(制作团队) -->
+        <div class="vertical-carousel right-carousel">
+            <div class="vertical-title">制作团队</div>
+            <div class="vertical-carousel-container">
+                <div class="vertical-item">
+                    <img src="./images/后25/24247409126王红娟/图片-24.jpg" alt="26">
+                    <div class="vertical-text">王红娟</div>
+                </div>
+                <div class="vertical-item">
+                    <img src="./images/后25/27.jpg" alt="27">
+                    <div class="vertical-text">李政毅</div>
+                </div>
+                <div class="vertical-item">
+                    <img src="./images/后25/28.png" alt="28">
+                    <div class="vertical-text">马海啸</div>
+                </div>
+                <div class="vertical-item">
+                    <img src="./images/后25/24247409129王鹏鹂/图片-27.jpg" alt="29">
+                    <div class="vertical-text">王鹏鹂</div>
+                </div>
+                <div class="vertical-item">
+                    <img src="./images/后25/24247409130魏晓凤/图片-31.jpg" alt="30">
+                    <div class="vertical-text">魏晓凤</div>
+                </div>
+                <div class="vertical-item">
+                    <img src="./images/后25/24247409131姚鸿飞/图片-15.jpg" alt="31">
+                    <div class="vertical-text">姚鸿飞</div>
+                </div>
+                <div class="vertical-item">
+                    <img src="./images/后25/24247409132杜朵朵/1.jpg" alt="32">
+                    <div class="vertical-text">杜朵朵</div>
+                </div>
+                <div class="vertical-item">
+                    <img src="./images/后25/24247409133李建霞/图片-21.jpg" alt="33">
+                    <div class="vertical-text">李建霞</div>
+                </div>
+                <div class="vertical-item">
+                    <img src="./images/后25/24247409134令伟伟/图片-12.jpg" alt="34">
+                    <div class="vertical-text">令传伟</div>
+                </div>
+                <div class="vertical-item">
+                    <img src="./images/后25/24247409135张雨/图片-29.jpg" alt="35">
+                    <div class="vertical-text">张雨</div>
+                </div>
+                <div class="vertical-item">
+                    <img src="./images/后25/24247409136田玉梅/图片-16.jpg" alt="36">
+                    <div class="vertical-text">田玉梅</div>
+                </div>
+                <div class="vertical-item">
+                    <img src="./images/后25/24247409137徐飞/图片-38.jpg" alt="37">
+                    <div class="vertical-text">徐飞</div>
+                </div>
+                <div class="vertical-item">
+                    <img src="./images/后25/24247409138任永欣/图片-5.jpg" alt="38">
+                    <div class="vertical-text">任永欣</div>
+                </div>
+                <div class="vertical-item">
+                    <img src="./images/后25/24247409139王美祖/图片-25.jpg" alt="39">
+                    <div class="vertical-text">王美祖</div>
+                </div>
+                <div class="vertical-item">
+                    <img src="./images/后25/24247409140杨莉莉/图片-3.jpg" alt="40">
+                    <div class="vertical-text">杨莉莉</div>
+                </div>
+                <div class="vertical-item">
+                    <img src="./images/后25/24247409141李国强/图片-13.jpg" alt="41">
+                    <div class="vertical-text">李国强</div>
+                </div>
+                <div class="vertical-item">
+                    <img src="./images/后25/24247409142汪浩兵/图片-32.jpg" alt="42">
+                    <div class="vertical-text">汪浩兵</div>
+                </div>
+                <div class="vertical-item">
+                    <img src="./images/后25/24247409143单艳娟/图片-28.jpg" alt="43">
+                    <div class="vertical-text">单艳娟</div>
+                </div>
+                <div class="vertical-item">
+                    <img src="./images/后25/24247409144田培君/图片-30.jpg" alt="44">
+                    <div class="vertical-text">田培君</div>
+                </div>
+                <div class="vertical-item">
+                    <img src="./images/后25/24247409145杨洋/图片-6.jpg" alt="45">
+                    <div class="vertical-text">杨洋</div>
+                </div>
+                <div class="vertical-item">
+                    <img src="./images/后25/24247409146马瑞灵/图片-7.jpg" alt="46">
+                    <div class="vertical-text">马瑞灵</div>
+                </div>
+                <div class="vertical-item">
+                    <img src="./images/后25/徐宁/图片-20.jpg" alt="47">
+                    <div class="vertical-text">徐宁</div>
+                </div>
+                <div class="vertical-item">
+                    <img src="./images/后25/48.jpg" alt="48">
+                    <div class="vertical-text">杨如斌</div>
+                </div>
+                <div class="vertical-item">
+                    <img src="./images/后25/24247409149鲁嘉和/图片-17.jpg" alt="49">
+                    <div class="vertical-text">鲁嘉和</div>
+                </div>
+                <div class="vertical-item">
+                    <img src="./images/后25/24247409150吴鸿博/图片-8.jpg" alt="50">
+                    <div class="vertical-text">吴鸿博</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+
+    <!-- 页脚区域 -->
+    <footer class="footer">
+        <div class="footer-container">
+            <p> 2024 红色记忆 版权所有</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script type="text/javascript"
+        src="https://webapi.amap.com/maps?v=2.0&key=2f2e4ef788ed19daac48f524bb526a3c"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/carousel.js"></script>
+    <script src="./js/map.js"></script>
+    <script src="./js/loading.js"></script>
+    <!-- 在body结束标签前添加 -->
+    <script src="./js/faith-light.js"></script>
+</body>
+
+</html>

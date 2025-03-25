@@ -1,0 +1,587 @@
+/* 红色文史馆区域样式 */
+.museum-section {
+    width: 100%;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 25px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* 主标题样式 */
+.museum-title {
+    font-size: 28px;
+    color: #c41e3a;
+    text-align: center;
+    margin-bottom: 35px;
+    font-family: "STKaiti", "楷体", serif;
+    position: relative;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.museum-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -12px;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #c41e3a, transparent);
+}
+
+/* 内容区布局 */
+.museum-top,
+.museum-bottom {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+/* 红色书籍区 */
+.red-books {
+    flex: 3;
+    background: #fff;
+    border-radius: 15px;
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.08),
+        0 0 0 1px rgba(0, 0, 0, 0.01);
+}
+
+/* 标题区域 */
+.books-header {
+    position: relative;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.books-title {
+    font-size: 22px;
+    color: #333;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.books-title i {
+    color: #c41e3a;
+    font-size: 24px;
+}
+
+/* 装饰元素 */
+.books-header::before {
+    content: '红色文献';
+    position: absolute;
+    right: 0;
+    top: 5px;
+    font-size: 60px;
+    font-weight: bold;
+    color: rgba(196, 30, 58, 0.03);
+    font-family: "STKaiti", "楷体", serif;
+    pointer-events: none;
+}
+
+/* 书籍列表容器 */
+.books-list {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    padding: 10px 5px;
+}
+
+/* 背景装饰 */
+.red-books::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 150px;
+    background: linear-gradient(180deg,
+        rgba(196, 30, 58, 0.02) 0%,
+        rgba(196, 30, 58, 0.01) 40%,
+        transparent 100%
+    );
+    pointer-events: none;
+}
+
+.red-books::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(0deg,
+        rgba(0, 0, 0, 0.02) 0%,
+        transparent 100%
+    );
+    pointer-events: none;
+}
+
+/* 单本书样式 */
+.book-item {
+    position: relative;
+    width: 100%;
+    height: 240px;
+    transition: all 0.3s ease;
+    padding: 8px;
+}
+
+/* 书籍容器 */
+.book-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 
+        -5px 0 15px rgba(0, 0, 0, 0.1),
+        0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+/* 书籍封面 */
+.book-cover {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #fff;
+}
+
+/* 书脊效果 */
+.book-container::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 22px;
+    height: 100%;
+    background: linear-gradient(to right,
+        #8b0000,
+        #c41e3a
+    );
+    z-index: 1;
+}
+
+/* 书页效果 */
+.book-container::after {
+    content: '';
+    position: absolute;
+    left: 22px;
+    top: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(to right,
+        #fff,
+        #f0f0f0
+    );
+    box-shadow: 
+        inset -1px 0 2px rgba(0, 0, 0, 0.1);
+}
+
+.book-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translateX(22px);
+    transition: transform 0.3s ease;
+}
+
+/* 书籍信息 */
+.book-info {
+    position: absolute;
+    left: 22px;
+    right: 0;
+    bottom: 0;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.98);
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.book-title {
+    font-size: 13px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 3px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.book-author {
+    font-size: 12px;
+    color: #666;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* 悬停效果 */
+.book-item:hover {
+    transform: translateY(-5px);
+}
+
+.book-item:hover .book-container {
+    box-shadow: 
+        -8px 0 20px rgba(0, 0, 0, 0.15),
+        0 8px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* 响应式布局优化 */
+@media (max-width: 1400px) {
+    .books-list {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+    
+    .book-item {
+        height: 220px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .books-list {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+    
+    .book-item {
+        height: 220px;
+    }
+    
+    .books-header::before {
+        font-size: 50px;
+    }
+}
+
+@media (max-width: 992px) {
+    .red-books {
+        padding: 20px;
+    }
+    
+    .books-list {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+    }
+    
+    .book-item {
+        height: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .red-books {
+        padding: 15px;
+    }
+    
+    .books-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .book-item {
+        height: 180px;
+    }
+    
+    .book-title {
+        font-size: 12px;
+    }
+    
+    .book-author {
+        font-size: 11px;
+    }
+    
+    .books-header::before {
+        display: none;
+    }
+}
+
+@media (max-width: 576px) {
+    .books-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    
+    .book-item {
+        height: 160px;
+        padding: 5px;
+    }
+    
+    .book-info {
+        padding: 8px;
+    }
+}
+
+/* 革命报刊区 */
+.red-newspapers {
+    flex: 1;
+    background: #f4efe4;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 报刊区主标题 */
+.red-newspapers .section-title {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 10px 0;
+    border-top: 3px double #8b0000;
+    border-bottom: 3px double #8b0000;
+}
+
+.red-newspapers .section-title i {
+    display: none;
+}
+
+/* 报刊容器 */
+.newspaper-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* 单个报刊项目 */
+.newspaper-item {
+    background: #f9f6f0;
+    padding: 15px;
+    position: relative;
+    border: 1px solid #d4c5b9;
+    min-height: 130px;
+}
+
+/* 报刊标题区 */
+.newspaper-header {
+    text-align: center;
+    border-bottom: 2px solid #8b0000;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+}
+
+/* 报纸名称 */
+.newspaper-item h2 {
+    font-size: 22px;
+    color: #8b0000;
+    font-weight: bold;
+    font-family: "STZhongsong", "华文中宋", serif;
+    margin: 0 0 6px;
+    letter-spacing: 3px;
+}
+
+/* 报纸期号和日期 */
+.newspaper-date {
+    font-family: "STKaiti", "楷体", serif;
+    color: #333;
+    font-size: 13px;
+    margin: 4px 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.newspaper-date::before,
+.newspaper-date::after {
+    content: '★';
+    color: #8b0000;
+    font-size: 10px;
+}
+
+/* 分隔线 */
+.newspaper-divider {
+    height: 1px;
+    background: repeating-linear-gradient(
+        90deg,
+        #8b0000,
+        #8b0000 3px,
+        transparent 3px,
+        transparent 6px
+    );
+    margin: 10px 0;
+}
+
+/* 报刊内容 */
+.newspaper-content {
+    font-family: "STKaiti", "楷体", serif;
+    color: #333;
+    font-size: 14px;
+    line-height: 1.7;
+    text-align: justify;
+    text-indent: 2em;
+    max-height: 65px;
+    overflow: hidden;
+}
+
+/* 纸张纹理和老化效果 */
+.newspaper-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        repeating-linear-gradient(
+            to bottom,
+            transparent,
+            transparent 27px,
+            rgba(0, 0, 0, 0.03) 27px,
+            rgba(0, 0, 0, 0.03) 28px
+        );
+    pointer-events: none;
+}
+
+/* 响应式调整 */
+@media (max-width: 992px) {
+    .newspaper-item h2 {
+        font-size: 20px;
+    }
+    
+    .newspaper-content {
+        font-size: 13px;
+        max-height: 66px;
+    }
+}
+
+@media (max-width: 768px) {
+    .red-newspapers {
+        padding: 15px;
+    }
+    
+    .newspaper-item {
+        padding: 12px;
+        min-height: 120px;
+    }
+    
+    .newspaper-item h2 {
+        font-size: 18px;
+    }
+    
+    .newspaper-content {
+        font-size: 12px;
+        max-height: 60px;
+    }
+}
+
+/* 文物展示和历史档案区共同样式 */
+.cultural-relics,
+.historical-archives {
+    flex: 1;
+    background: #fff;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+}
+
+/* 标题样式 */
+.section-title {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 25px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section-title i {
+    color: #c41e3a;
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+.section-title:hover i {
+    transform: rotate(360deg);
+}
+
+/* 文物样式 */
+.relics-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.relic-item {
+    border: 1px solid #eee;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.relic-item img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+}
+
+.relic-info {
+    padding: 8px;
+    background: #fff;
+}
+
+.relic-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+}
+
+.relic-desc {
+    font-size: 12px;
+    color: #666;
+    margin-top: 4px;
+}
+
+.relic-date {
+    font-size: 12px;
+    color: #999;
+    margin-top: 4px;
+}
+
+/* 档案样式 */
+.archives-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.archive-item {
+    padding: 12px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    background: #fff;
+}
+
+.archive-date {
+    font-size: 12px;
+    color: #c41e3a;
+    margin-bottom: 4px;
+}
+
+.archive-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.archive-desc {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 4px;
+}
+
+.archive-location {
+    font-size: 12px;
+    color: #999;
+}

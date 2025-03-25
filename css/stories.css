@@ -1,0 +1,209 @@
+/* 长征故事集模块样式 */
+.march-stories {
+    padding: 80px 0;
+    background: #f5f5f5;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 添加红色装饰线 */
+.march-stories::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #c41e3a, transparent);
+}
+
+.stories-header {
+    text-align: center;
+    margin-bottom: 60px;
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+.stories-title {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    letter-spacing: 4px;
+    color: #c41e3a;
+    text-shadow: none;
+}
+
+.stories-subtitle {
+    font-size: 16px;
+    color: #666;
+    letter-spacing: 2px;
+}
+
+.stories-container {
+    width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.story-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.story-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(196, 30, 58, 0.15);
+    border-color: rgba(196, 30, 58, 0.1);
+}
+
+.story-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.story-image::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
+    z-index: 1;
+}
+
+.story-tag {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #c41e3a;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    z-index: 2;
+}
+
+.story-content {
+    padding: 25px;
+}
+
+.story-content h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #333;
+}
+
+.story-brief {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    height: 72px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.story-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.story-date {
+    color: #999;
+    font-size: 14px;
+}
+
+.read-more {
+    background: transparent;
+    color: #c41e3a;
+    border: 1px solid #c41e3a;
+    padding: 6px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.read-more:hover {
+    background: #c41e3a;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+/* 添加装饰元素 */
+.stories-header::before,
+.stories-header::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 2px;
+    background: #c41e3a;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.stories-header::before {
+    left: -80px;
+}
+
+.stories-header::after {
+    right: -80px;
+}
+
+/* 响应式设计 */
+@media (max-width: 1200px) {
+    .stories-header,
+    .stories-container {
+        width: 95%;
+    }
+    
+    .stories-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .stories-title {
+        font-size: 28px;
+    }
+    
+    .stories-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .story-card {
+        max-width: 100%;
+    }
+}
+
+/* 图片样式 */
+.story-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    position: relative;
+    z-index: 0;
+}
+
+.story-card:hover .story-image img {
+    transform: scale(1.1);
+}
+  

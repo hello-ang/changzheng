@@ -1,0 +1,594 @@
+/* 重置默认样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 基础字体和颜色设置 */
+body {
+    font-family: "Microsoft YaHei", sans-serif;
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 头部导航样式 */
+.header {
+    background: white;
+    padding: 5px 0;
+    text-align: center;
+    height: 55px;
+    min-height: 55px;
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* 头部文字 */
+.header-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--revolutionary-red);
+}
+
+/* 头部背景 */
+.header-bg {
+    background: white;
+    width: 100%;
+    transition: transform 0.3s ease;
+    position: relative;
+    z-index: 999;
+}
+
+/* 添加头部隐藏类 */
+.header-bg.hidden {
+    transform: translateY(-100%);
+}
+
+/* 导航栏核心样式 */
+.nav {
+    background: transparent;
+    height: 80px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    z-index: 100;
+}
+
+/* 长征路线背景效果 */
+.nav::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -20%;
+    right: -1.35%;
+    bottom: 0;
+    background: url('../导航/金龙.gif') center/cover no-repeat;
+    opacity: 0.25;
+    mix-blend-mode: lighten;
+    z-index: 1;
+    transform: scale(1.4);
+}
+
+/* 导航容器样式 */
+.nav-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: relative;
+    z-index: 3;
+    gap: 1px;
+}
+
+/* 导航行样式 */
+.nav-row {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 39px;
+    gap: 0;
+}
+
+/* 导航项样式 */
+.nav-item {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    max-width: 120px;
+}
+
+/* 导航链接样式 */
+.nav-item > a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0;
+    height: 39px;
+    line-height: 39px;
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: none;
+    white-space: nowrap;
+    width: 100%;
+}
+
+/* 当前页面导航项的特殊样式 */
+.nav-item > a.current {
+    position: relative;
+    color: #FFD700;
+    overflow: visible;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: 0 15px;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    border-radius: 4px;
+    animation: borderGlow 2s ease-in-out infinite;
+}
+
+/* 新的动画效果 */
+@keyframes borderGlow {
+    0%, 100% {
+        box-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
+        border-color: rgba(255, 215, 0, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+        border-color: rgba(255, 215, 0, 0.6);
+    }
+}
+
+/* 五角星装饰 */
+.nav-item > a.current span::before,
+.nav-item > a.current span::after {
+    content: '★';
+    position: absolute;
+    color: #FFD700;
+    font-size: 10px;
+    opacity: 0.7;
+    animation: starTwinkle 2s ease-in-out infinite;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.nav-item > a.current span::before {
+    left: 5px;
+}
+
+.nav-item > a.current span::after {
+    right: 5px;
+}
+
+/* 调整当前导航项文字的内边距，为五角星留出空间 */
+.nav-item > a.current span {
+    padding: 0 20px;
+    position: relative;
+    display: inline-block;
+}
+
+/* 动画效果 */
+@keyframes starTwinkle {
+    0%, 100% {
+        opacity: 0.7;
+        transform: translateY(-50%) scale(1);
+    }
+    50% {
+        opacity: 0.3;
+        transform: translateY(-50%) scale(0.8);
+    }
+}
+
+/* 移动端适配 */
+@media screen and (max-width: 768px) {
+    .nav {
+        height: 50px;
+        padding: 0 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    /* 移动端导航容器样式 */
+    .nav-container {
+        display: none;
+        position: fixed;
+        top: 50px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(206, 17, 38, 0.98);
+        padding: 10px;
+        overflow-y: auto;
+        z-index: 1001;
+    }
+
+    /* 显示激活的导航菜单 */
+    .nav-container.active {
+        display: block !important;
+    }
+
+    /* 导航行样式 */
+    .nav-row {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding: 5px 0;
+        width: 100%;
+        height: auto;
+    }
+
+    /* 导航项样式 */
+    .nav-item {
+        width: 100%;
+        max-width: 100%;
+        height: 40px;
+        margin: 0;
+    }
+
+    /* 导航链接样式 */
+    .nav-item > a {
+        width: 100%;
+        height: 40px;
+        line-height: 40px;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 6px;
+        font-size: 1em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+    }
+
+    /* 导航链接悬停效果 */
+    .nav-item > a:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: translateY(-2px);
+    }
+
+    /* 当前激活的导航链接 */
+    .nav-item > a.current {
+        background: rgba(255, 215, 0, 0.15);
+        border-color: rgba(255, 215, 0, 0.3);
+        color: #FFD700;
+    }
+
+    /* 移除不需要的装饰效果 */
+    .nav-item > a::before,
+    .nav-item > a::after,
+    .nav-item > a:hover span::before,
+    .nav-item > a:hover span::after {
+        display: none;
+    }
+
+    /* 移动端菜单按钮 */
+    .nav .menu-toggle {
+        width: 36px;
+        height: 36px;
+        font-size: 20px;
+    }
+}
+
+/* 导航背景 */
+.nav-bg {
+    background: #CE1126;
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: center;
+    overflow: visible;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+/* 当头部隐藏时导航栏的位置 */
+.nav-bg.top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+/* 导航项悬停效果 */
+.nav-item > a:hover {
+    color: #FFD700;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+}
+
+/* 页脚样式 */
+.footer {
+    height: 60px;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 13px;
+    text-align: center;
+    position: relative;
+}
+
+/* 页脚容器 */
+.footer-container {
+    width: 100%;
+    max-width: 600px;
+    padding: 15px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* 页脚文字 */
+.footer p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* 页脚背景 */
+.footer-bg {
+    background: #CE1126;
+    width: 100%;
+    margin-top: auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 移动端菜单按钮基础样式 */
+.nav .menu-toggle {
+    display: none;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    z-index: 1002;
+    transition: all 0.3s ease;
+}
+
+/* 移动端适配 */
+@media screen and (max-width: 768px) {
+    .nav {
+        height: 60px;
+        padding: 0 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    /* 强制显示菜单按钮 */
+    .nav .menu-toggle {
+        display: flex !important;
+    }
+
+    /* 按钮激活状态 */
+    .nav .menu-toggle.active {
+        background: rgba(255, 255, 255, 0.2);
+        border-color: rgba(255, 255, 255, 0.3);
+        transform: rotate(90deg);
+    }
+
+    /* 其他移动端样式保持不变... */
+}
+
+/* 导航项悬停装饰效果 */
+.nav-item > a::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 5%;
+    width: 90%;
+    height: 1px;
+    background: rgba(255, 215, 0, 0.5);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.nav-item > a::after {
+    content: '';
+    position: absolute;
+    bottom: 8px;
+    left: 5%;
+    width: 90%;
+    height: 1px;
+    background: rgba(255, 215, 0, 0.5);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.nav-item > a:hover::before,
+.nav-item > a:hover::after {
+    transform: scaleX(1);
+}
+
+/* 导航项悬停时的五角星效果 */
+.nav-item > a:hover span::before,
+.nav-item > a:hover span::after {
+    content: '★';
+    position: absolute;
+    color: #FFD700;
+    font-size: 10px;
+    opacity: 0.7;
+    top: 50%;
+    transform: translateY(-50%) scale(1);
+}
+
+.nav-item > a:hover span::before {
+    left: 5px;
+}
+
+.nav-item > a:hover span::after {
+    right: 5px;
+}
+
+/* 调整悬停时文字的内边距 */
+.nav-item > a:hover span {
+    padding: 0 20px;
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    line-height: inherit;
+}
+
+/* LOGO容器样式 */
+.logo-container {
+    width: 100%;
+    height: 180px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1001;
+}
+
+/* 包装容器样式 */
+.logo-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* LOGO图片样式 */
+.logo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 调整内容区域的样式 */
+.content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    padding-top: 100px;
+}
+
+/* 左侧导航模块整体样式 */
+.spirit-nav {
+    width: 280px;
+    height: 320px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* 标题样式 */
+.spirit-title {
+    background: #CE1126;
+    color: #fff;
+    padding: 15px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+/* 导航列表容器 */
+.spirit-list {
+    height: 270px;
+    overflow-y: auto;
+}
+
+/* 导航菜单项 */
+.spirit-item {
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    height: 45px;
+    display: flex;
+    align-items: center;
+}
+
+/* 左侧内容区域整体样式 */
+.spirit-box {
+    width: 280px;
+    height: 500px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+/* 标题样式保持不变 */
+.spirit-title {
+    background: #CE1126;
+    color: #fff;
+    padding: 15px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+/* 导航列表容器也保持不变 */
+.spirit-list {
+    height: 270px;
+}
+
+/* 作者信息样式 */
+.author-info {
+    width: 100%;
+    background: #f8f9fa;
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+    margin-bottom: 20px;
+}
+
+.author-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.author-label {
+    color: #666;
+    font-weight: bold;
+}
+
+.author-name {
+    color: #CE1126;
+    font-weight: bold;
+}
+
+.author-school {
+    color: #333;
+}
+
+

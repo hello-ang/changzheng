@@ -1,0 +1,285 @@
+/* 长征简介模块容器 */
+.march-introduction {
+    padding: 80px 0;
+    background: linear-gradient(135deg, 
+        #8b0000 0%,
+        #990000 25%,
+        #8b0000 50%,
+        #800000 75%,
+        #8b0000 100%
+    );
+    position: relative;
+    color: #fff;
+    border-top: 5px solid rgba(255, 255, 255, 0.15);
+    border-bottom: 5px solid rgba(255, 255, 255, 0.15);
+    overflow: hidden;
+}
+
+/* 添加背景纹理 */
+.march-introduction::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        linear-gradient(45deg, transparent 48%, rgba(255, 255, 255, 0.05) 50%, transparent 52%),
+        linear-gradient(-45deg, transparent 48%, rgba(255, 255, 255, 0.05) 50%, transparent 52%);
+    background-size: 30px 30px;
+    opacity: 0.3;
+}
+
+/* 添加动态光效 */
+.march-introduction::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    right: -50%;
+    bottom: -50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 60%);
+    animation: lightMove 20s infinite linear;
+}
+
+@keyframes lightMove {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(50%, 50%);
+    }
+}
+
+/* 标题样式 */
+.introduction-title {
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+    color: #fff;
+    font-size: 48px;
+    font-weight: bold;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+    letter-spacing: 8px;
+}
+
+.introduction-title::before {
+    content: '★';
+    position: absolute;
+    left: 50%;
+    top: -40px;
+    transform: translateX(-50%);
+    font-size: 36px;
+    color: #fff;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+.introduction-title::after {
+    content: '';
+    display: block;
+    width: 120px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #fff, transparent);
+    margin: 25px auto;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+/* 内容容器 */
+.introduction-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    padding: 0 40px;
+    position: relative;
+}
+
+/* 左侧文字介绍 */
+.introduction-text {
+    flex: 1;
+    min-width: 400px;
+}
+
+.text-content {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 40px 50px;
+    border-radius: 20px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+    position: relative;
+    border-left: 5px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+    transform: perspective(1000px) rotateY(0deg);
+    transition: transform 0.5s ease;
+}
+
+.text-content:hover {
+    transform: perspective(1000px) rotateY(2deg);
+}
+
+.text-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
+    border-radius: 20px;
+    pointer-events: none;
+}
+
+.text-content p {
+    margin-bottom: 30px;
+    line-height: 2.2;
+    color: #fff;
+    text-indent: 2em;
+    font-size: 17px;
+    letter-spacing: 1.5px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.text-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* 右侧关键信息 */
+.introduction-highlights {
+    width: 400px;
+}
+
+.highlight-card {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s ease;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.highlight-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(196, 30, 58, 0.1), transparent);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.highlight-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.highlight-card:hover::before {
+    opacity: 1;
+}
+
+.highlight-title {
+    color: #fff;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    letter-spacing: 2px;
+}
+
+.highlight-title i {
+    margin-right: 15px;
+    color: #fff;
+    font-size: 28px;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    opacity: 0.9;
+}
+
+.highlight-content {
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.9;
+    font-size: 16px;
+    letter-spacing: 1.5px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* 装饰元素 */
+.decoration-star {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 50px solid rgba(255, 255, 255, 0.1);
+    transform-origin: center;
+}
+
+.decoration-star::after {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: -25px;
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-top: 50px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 添加动态波纹效果 */
+@keyframes ripple {
+    0% {
+        transform: scale(0.8);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+.ripple-effect {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    animation: ripple 4s infinite;
+}
+
+.ripple-1 { top: 20%; left: 10%; animation-delay: 0s; }
+.ripple-2 { top: 60%; right: 15%; animation-delay: 2s; }
+.ripple-3 { bottom: 15%; left: 30%; animation-delay: 1s; }
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .introduction-container {
+        flex-direction: column;
+        padding: 0 20px;
+    }
+    
+    .introduction-highlights {
+        width: 100%;
+    }
+    
+    .introduction-title {
+        font-size: 32px;
+        letter-spacing: 4px;
+    }
+
+    .text-content {
+        padding: 30px;
+    }
+
+    .highlight-card {
+        padding: 25px;
+    }
+} 

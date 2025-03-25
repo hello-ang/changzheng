@@ -1,0 +1,247 @@
+/* 长征遗址今昔对比模块样式 */
+.historical-sites-comparison {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* 添加背景纹理 */
+.historical-sites-comparison::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        linear-gradient(45deg, transparent 48%, rgba(196, 30, 58, 0.03) 50%, transparent 52%),
+        linear-gradient(-45deg, transparent 48%, rgba(196, 30, 58, 0.03) 50%, transparent 52%);
+    background-size: 30px 30px;
+}
+
+/* 标题样式 */
+.sites-title {
+    text-align: center;
+    font-size: 36px;
+    color: #c41e3a;
+    margin-bottom: 60px;
+    font-weight: bold;
+    position: relative;
+    text-shadow: 0 2px 4px rgba(196, 30, 58, 0.1);
+    letter-spacing: 4px;
+}
+
+.sites-title::before {
+    content: '★';
+    position: absolute;
+    left: 50%;
+    top: -40px;
+    transform: translateX(-50%);
+    font-size: 24px;
+    color: #c41e3a;
+    opacity: 0.6;
+}
+
+.sites-title::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #c41e3a, transparent);
+}
+
+/* 容器样式 */
+.sites-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    padding: 0 30px;
+    position: relative;
+}
+
+/* 对比项样式 */
+.comparison-item {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+.comparison-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(196, 30, 58, 0.15);
+}
+
+/* 图片包装器 */
+.comparison-wrapper {
+    position: relative;
+    display: flex;
+    height: 450px;
+    gap: 3px;
+}
+
+/* 图片容器 */
+.image-container {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.5s ease;
+}
+
+.comparison-item:hover .image-container img {
+    transform: scale(1.05);
+}
+
+/* 时间标签 */
+.time-label {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(196, 30, 58, 0.9);
+    color: #fff;
+    padding: 8px 20px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(196, 30, 58, 0.3);
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+
+.image-container:hover .time-label {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(196, 30, 58, 0.4);
+}
+
+/* 分隔线 */
+.image-container.present::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, transparent, #c41e3a, transparent);
+    box-shadow: 0 0 15px rgba(196, 30, 58, 0.5);
+}
+
+/* 遗址信息 */
+.site-info {
+    padding: 35px 40px;
+    background: #fff;
+    position: relative;
+}
+
+.site-info::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 40px;
+    right: 40px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(196, 30, 58, 0.2), transparent);
+}
+
+.site-info h3 {
+    font-size: 26px;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: bold;
+    position: relative;
+    padding-left: 15px;
+}
+
+.site-info h3::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 24px;
+    background: #c41e3a;
+    border-radius: 2px;
+}
+
+.site-info p {
+    color: #666;
+    line-height: 1.9;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    text-align: justify;
+    padding-left: 15px;
+}
+
+/* 添加装饰元素 */
+.comparison-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #c41e3a, transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.comparison-item:hover::after {
+    opacity: 1;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .comparison-wrapper {
+        flex-direction: column;
+        height: auto;
+    }
+    
+    .image-container {
+        height: 300px;
+    }
+    
+    .image-container.present::before {
+        width: 100%;
+        height: 3px;
+        left: 0;
+        top: 0;
+        background: linear-gradient(to right, transparent, #c41e3a, transparent);
+    }
+    
+    .sites-title {
+        font-size: 28px;
+        margin-bottom: 40px;
+    }
+    
+    .site-info {
+        padding: 25px 20px;
+    }
+    
+    .site-info h3 {
+        font-size: 22px;
+    }
+    
+    .site-info p {
+        font-size: 14px;
+    }
+    
+    .time-label {
+        padding: 6px 15px;
+        font-size: 12px;
+    }
+} 

@@ -1,0 +1,606 @@
+/* 信仰之光模块样式 */
+.faith-light-section {
+    padding: 20px 0;
+    background: linear-gradient(135deg, #1a0000 0%, #2a0000 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.faith-title {
+    text-align: center;
+    color: #fff;
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
+    letter-spacing: 5px;
+    font-weight: bold;
+}
+
+/* 长明灯样式设计 */
+.eternal-lamp-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px 0;
+}
+
+.eternal-lamp {
+    position: relative;
+    width: 90px;
+    height: 150px;
+    filter: drop-shadow(0 10px 30px rgba(255, 69, 0, 0.2));
+}
+
+/* 玻璃罩设计 */
+.lamp-glass {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 120px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 35px 35px 20px 20px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 
+        inset 0 0 30px rgba(0, 0, 0, 0.3),
+        inset 0 0 15px rgba(255, 255, 255, 0.05),
+        0 0 20px rgba(255, 69, 0, 0.1);
+    backdrop-filter: blur(5px);
+    overflow: hidden;
+}
+
+/* 玻璃罩反光效果 */
+.lamp-glass::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 5px;
+    width: 2px;
+    height: calc(100% - 10px);
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        rgba(255, 255, 255, 0.3),
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    border-radius: 1px;
+}
+
+.lamp-glass::after {
+    content: '';
+    position: absolute;
+    right: 15px;
+    top: 5px;
+    width: 1px;
+    height: calc(100% - 10px);
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0.15),
+        rgba(255, 255, 255, 0.1),
+        transparent
+    );
+}
+
+/* 火焰效果 */
+.lamp-flame {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 30px;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(255, 255, 255, 0.9) 0%,
+        rgba(255, 165, 0, 0.8) 30%,
+        rgba(255, 69, 0, 0.6) 60%,
+        rgba(255, 0, 0, 0.4) 90%
+    );
+    border-radius: 50% 50% 30% 30%;
+    filter: blur(2px);
+    animation: flicker 3s infinite;
+}
+
+/* 灯座设计 */
+.lamp-base {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 30px;
+    background: linear-gradient(
+        45deg,
+        #8b0000 0%,
+        #4a0000 100%
+    );
+    border-radius: 8px;
+    box-shadow: 
+        0 4px 10px rgba(0, 0, 0, 0.5),
+        inset 0 2px 3px rgba(255, 255, 255, 0.1);
+}
+
+/* 灯座纹理 */
+.lamp-base::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(255, 255, 255, 0.1)
+    );
+    border-radius: 4px;
+}
+
+/* 光晕效果 */
+.lamp-glow {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(
+        circle at center,
+        rgba(255, 165, 0, 0.4),
+        rgba(255, 69, 0, 0.2),
+        transparent 70%
+    );
+    filter: blur(5px);
+    animation: glow 3s ease-in-out infinite;
+}
+
+/* 火焰闪烁动画 */
+@keyframes flicker {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
+    50% { transform: translate(-50%, -50%) scale(1.1); opacity: 1; }
+}
+
+/* 光晕动画 */
+@keyframes glow {
+    0%, 100% { opacity: 0.6; transform: translate(-50%, -50%) scale(1); }
+    50% { opacity: 0.8; transform: translate(-50%, -50%) scale(1.2); }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .faith-light-section {
+        padding: 30px 15px;
+    }
+
+    .faith-title {
+        font-size: 24px;
+        margin-bottom: 25px;
+        letter-spacing: 3px;
+    }
+
+    /* 长明灯容器 */
+    .eternal-lamp-container {
+        margin: 20px 0;
+    }
+
+    .eternal-lamp {
+        width: 70px;
+        height: 120px;
+    }
+
+    /* 玻璃罩调整 */
+    .lamp-glass {
+        width: 55px;
+        height: 95px;
+    }
+
+    /* 火焰大小调整 */
+    .lamp-flame {
+        width: 16px;
+        height: 24px;
+    }
+
+    /* 灯座调整 */
+    .lamp-base {
+        width: 65px;
+        height: 25px;
+    }
+
+    /* 光晕效果调整 */
+    .lamp-glow {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* 时间轴节点调整 */
+    .march-path {
+        margin-top: 40px;
+    }
+
+    .path-nodes {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0 20px;
+    }
+
+    .path-node {
+        width: 100%;
+        margin: 0;
+        padding: 15px 0;
+        position: relative;
+        display: flex;
+        align-items: flex-start;
+    }
+
+    /* 添加垂直连接线 */
+    .path-nodes::before {
+        content: '';
+        position: absolute;
+        left: 30px;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: linear-gradient(to bottom,
+            transparent,
+            rgba(255, 0, 0, 0.3),
+            rgba(255, 0, 0, 0.3),
+            transparent
+        );
+    }
+
+    .node-dot {
+        width: 16px;
+        height: 16px;
+        margin-right: 15px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .node-content {
+        flex: 1;
+        text-align: left;
+        margin-left: 10px;
+    }
+
+    .node-text {
+        font-size: 15px;
+        margin-bottom: 4px;
+    }
+
+    .node-desc {
+        font-size: 13px;
+        margin-bottom: 2px;
+    }
+
+    .node-detail {
+        font-size: 12px;
+    }
+
+    /* 标语容器调整 */
+    .faith-quotes {
+        height: 70px;
+        margin: 25px auto;
+        max-width: 100%;
+        padding: 0 15px;
+    }
+
+    .quote-text {
+        font-size: 15px;
+        letter-spacing: 2px;
+    }
+}
+
+/* 添加平板尺寸的优化 */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .faith-light-section {
+        padding: 40px 20px;
+    }
+
+    .faith-title {
+        font-size: 26px;
+    }
+
+    .path-nodes {
+        padding: 0 30px;
+    }
+
+    .path-node {
+        margin: 0 15px;
+    }
+
+    .faith-quotes {
+        max-width: 80%;
+    }
+}
+
+/* 超小屏幕的优化 */
+@media (max-width: 480px) {
+    .faith-light-section {
+        padding: 25px 10px;
+    }
+
+    .faith-title {
+        font-size: 22px;
+        letter-spacing: 2px;
+    }
+
+    .eternal-lamp {
+        width: 60px;
+        height: 100px;
+    }
+
+    .lamp-glass {
+        width: 45px;
+        height: 80px;
+    }
+
+    .node-text {
+        font-size: 14px;
+    }
+
+    .node-desc {
+        font-size: 12px;
+    }
+
+    .quote-text {
+        font-size: 14px;
+        letter-spacing: 1px;
+    }
+
+    .path-nodes {
+        padding: 0 15px;
+    }
+
+    .path-nodes::before {
+        left: 25px;
+    }
+
+    .node-dot {
+        width: 14px;
+        height: 14px;
+        margin-right: 12px;
+    }
+}
+
+/* 优化动画效果在移动端的表现 */
+@media (max-width: 768px) {
+    @keyframes flicker {
+        0%, 100% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.7; }
+        50% { transform: translate(-50%, -50%) scale(1); opacity: 0.9; }
+    }
+
+    @keyframes glow {
+        0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(0.9); }
+        50% { opacity: 0.7; transform: translate(-50%, -50%) scale(1.1); }
+    }
+}
+
+/* 添加环境光效果 */
+.eternal-lamp::after {
+    content: '';
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(
+        circle at center,
+        rgba(255, 165, 0, 0.1),
+        rgba(255, 69, 0, 0.05) 40%,
+        transparent 70%
+    );
+    filter: blur(20px);
+    pointer-events: none;
+}
+
+/* 长征路线图样式 */
+.march-path {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 15px 20px;
+    position: relative;
+}
+
+.path-line {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        rgba(255, 0, 0, 0.8),
+        #ff4444 20%,
+        rgba(255, 0, 0, 0.8) 40%,
+        #ff4444 60%,
+        rgba(255, 0, 0, 0.8) 80%,
+        #ff4444
+    );
+    transform: translateY(-50%);
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+}
+
+.path-nodes {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+    padding: 0 20px;
+}
+
+.path-node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 120px;
+}
+
+.node-dot {
+    width: 16px;
+    height: 16px;
+    background: #ff0000;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
+    position: relative;
+    transition: transform 0.3s;
+}
+
+.node-dot::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    background: #fff;
+    border-radius: 50%;
+    opacity: 0.6;
+}
+
+.node-dot:hover {
+    transform: scale(1.2);
+}
+
+.node-content {
+    text-align: center;
+}
+
+.node-text {
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.node-desc {
+    color: #ff4444;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.node-detail {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 12px;
+}
+
+/* 信仰标语 */
+.faith-quotes {
+    position: relative;
+    height: 60px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.quote-item {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+    padding: 0 20px;
+}
+
+.quote-item.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.quote-text {
+    font-size: 18px;
+    color: #fff;
+    text-shadow: 
+        0 0 10px rgba(255, 69, 0, 0.5),
+        0 0 20px rgba(255, 69, 0, 0.3);
+    letter-spacing: 3px;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+/* 响应式设计调整 */
+@media (max-width: 768px) {
+    .faith-light-section {
+        padding: 30px 0;
+    }
+
+    .faith-title {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .path-nodes {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 20px;
+    }
+    
+    .path-node {
+        margin: 15px 0;
+    }
+    
+    .path-line {
+        width: 2px;
+        height: 100%;
+        left: 28px;
+        top: 0;
+        transform: none;
+    }
+    
+    .node-content {
+        margin-left: 15px;
+        text-align: left;
+    }
+
+    .eternal-lamp {
+        width: 60px;
+        height: 100px;
+    }
+
+    .lamp-base {
+        height: 20px;
+    }
+
+    .lamp-body {
+        width: 45px;
+        height: 75px;
+        bottom: 18px;
+    }
+
+    .node-text {
+        font-size: 14px;
+    }
+
+    .node-desc {
+        font-size: 12px;
+    }
+
+    .node-detail {
+        font-size: 11px;
+    }
+
+    .quote-text {
+        font-size: 16px;
+        letter-spacing: 2px;
+    }
+
+    .faith-quotes {
+        height: 80px;
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+} 

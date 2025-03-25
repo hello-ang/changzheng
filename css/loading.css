@@ -1,0 +1,430 @@
+/* 加载动画容器 */
+.loading-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, 
+        #2b0000 0%,
+        #4a0000 100%
+    );
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s;
+}
+
+/* 进度容器 */
+.progress-container {
+    position: absolute;
+    width: 400px;
+    height: 30px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    overflow: hidden;
+    z-index: 200;
+    box-shadow: 
+        inset 0 2px 4px rgba(0,0,0,0.4),
+        0 0 10px rgba(255, 0, 0, 0.3);
+}
+
+/* 进度填充 */
+.water-wave {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(45deg,
+        rgba(220, 20, 20, 1) 25%,
+        rgba(255, 50, 50, 1) 25%,
+        rgba(255, 50, 50, 1) 50%,
+        rgba(220, 20, 20, 1) 50%,
+        rgba(220, 20, 20, 1) 75%,
+        rgba(255, 50, 50, 1) 75%
+    );
+    background-size: 40px 40px;
+    transition: width 0.3s ease;
+    animation: move-stripes 1s linear infinite;
+    box-shadow: 
+        0 0 15px rgba(255, 0, 0, 0.5),
+        inset 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+@keyframes move-stripes {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 40px 0;
+    }
+}
+
+/* 进度文字 */
+.progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    text-shadow: 
+        0 0 5px rgba(0, 0, 0, 0.5),
+        0 0 10px rgba(255, 0, 0, 0.5);
+    z-index: 2;
+    letter-spacing: 1px;
+}
+
+/* 进度条边框效果 */
+.progress-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 15px;
+    box-shadow: 
+        inset 0 1px 1px rgba(255,255,255,0.1),
+        0 1px 2px rgba(0,0,0,0.3);
+    pointer-events: none;
+}
+
+/* 弹幕容器 */
+.danmaku-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+/* 基础弹幕样式 */
+.danmaku {
+    position: fixed;
+    color: #fff;
+    font-size: 16px;
+    white-space: nowrap;
+    padding: 4px 12px;
+    border-radius: 20px;
+    opacity: 0;
+    transform-origin: center;
+    z-index: 10;
+    font-family: "Microsoft YaHei", sans-serif;
+    letter-spacing: 1px;
+}
+
+/* 默认弹幕 */
+.danmaku-default {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(4px);
+    text-shadow: 0 0 4px rgba(255, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 高亮弹幕 */
+.danmaku-highlight {
+    background: rgba(255, 50, 50, 0.15);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-shadow: 0 0 6px rgba(255, 0, 0, 0.6);
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.2);
+}
+
+/* 发光弹幕 */
+.danmaku-glow {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 
+        0 0 15px rgba(255, 0, 0, 0.3),
+        inset 0 0 8px rgba(255, 255, 255, 0.2);
+    text-shadow: 
+        0 0 8px rgba(255, 255, 255, 0.8),
+        0 0 15px rgba(255, 0, 0, 0.5);
+    font-weight: bold;
+}
+
+/* 描边弹幕 */
+.danmaku-outline {
+    background: transparent;
+    text-shadow: 
+        -1px -1px 0 rgba(255, 0, 0, 0.5),
+        1px -1px 0 rgba(255, 0, 0, 0.5),
+        -1px 1px 0 rgba(255, 0, 0, 0.5),
+        1px 1px 0 rgba(255, 0, 0, 0.5);
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* 弹幕动画 */
+@keyframes danmaku-fade {
+    0% {
+        opacity: 0;
+        transform: var(--start-transform) scale(0.8);
+        filter: blur(2px);
+    }
+    15% {
+        opacity: 1;
+        transform: var(--start-transform) scale(1);
+        filter: blur(0);
+    }
+    85% {
+        opacity: 1;
+        transform: var(--end-transform) scale(1);
+        filter: blur(0);
+    }
+    100% {
+        opacity: 0;
+        transform: var(--end-transform) scale(0.8);
+        filter: blur(2px);
+    }
+}
+
+/* 应用动画 */
+.danmaku {
+    animation: danmaku-fade var(--duration, 8s) cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 弹幕悬停效果 */
+.danmaku:hover {
+    animation-play-state: paused;
+    transform: scale(1.1) !important;
+    z-index: 100;
+    transition: transform 0.3s ease;
+}
+
+/* 装饰性光效 */
+.glow-effect {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+        circle at 50% 50%,
+        rgba(255, 0, 0, 0.15) 0%,
+        rgba(255, 0, 0, 0.1) 30%,
+        rgba(255, 0, 0, 0.05) 60%,
+        transparent 80%
+    );
+    animation: glow-pulse 4s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 6;
+}
+
+@keyframes glow-pulse {
+    0% { opacity: 0.3; }
+    50% { opacity: 0.6; }
+    100% { opacity: 0.3; }
+}
+
+/* 光线效果 */
+.light-rays {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: repeating-conic-gradient(
+        from 0deg,
+        transparent 0deg,
+        transparent 20deg,
+        rgba(255, 0, 0, 0.03) 20deg,
+        rgba(255, 0, 0, 0.03) 22deg
+    );
+    animation: rotate 60s linear infinite;
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: 7;
+}
+
+/* 主题文案样式 */
+.theme-text {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    z-index: 200;
+}
+
+.theme-title {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-shadow: 
+        0 0 10px rgba(255, 0, 0, 0.8),
+        0 0 20px rgba(255, 0, 0, 0.4);
+    letter-spacing: 8px;
+    animation: title-glow 2s ease-in-out infinite alternate;
+}
+
+.theme-subtitle {
+    font-size: 24px;
+    opacity: 0.9;
+    letter-spacing: 4px;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+    animation: subtitle-fade 2s ease-in-out infinite alternate;
+}
+
+@keyframes title-glow {
+    from { text-shadow: 0 0 10px rgba(255, 0, 0, 0.8), 0 0 20px rgba(255, 0, 0, 0.4); }
+    to { text-shadow: 0 0 15px rgba(255, 0, 0, 0.9), 0 0 30px rgba(255, 0, 0, 0.6); }
+}
+
+@keyframes subtitle-fade {
+    from { opacity: 0.8; }
+    to { opacity: 1; }
+}
+
+/* 上升光束效果 */
+.light-beam-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 3;
+}
+
+.rising-beam {
+    position: absolute;
+    width: 1px;
+    height: 50px;
+    background: linear-gradient(
+        to top,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        rgba(255, 0, 0, 0.5),
+        rgba(255, 255, 255, 0.3),
+        transparent
+    );
+    filter: blur(1px);
+    animation: rise-up var(--duration) linear forwards;
+    transform: rotate(var(--angle));
+    opacity: 0;
+}
+
+@keyframes rise-up {
+    0% {
+        transform: translateY(100vh) rotate(var(--angle));
+        opacity: 0;
+    }
+    10% {
+        opacity: var(--opacity, 0.6);
+    }
+    90% {
+        opacity: var(--opacity, 0.6);
+    }
+    100% {
+        transform: translateY(-100px) rotate(var(--angle));
+        opacity: 0;
+    }
+}
+
+/* 粒子效果 */
+.particles-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.particle {
+    position: absolute;
+    background: radial-gradient(circle at center,
+        rgba(255, 255, 255, 0.8) 0%,
+        rgba(255, 255, 255, 0.1) 100%
+    );
+    border-radius: 50%;
+    pointer-events: none;
+    animation: float-up var(--duration) ease-out forwards;
+}
+
+@keyframes float-up {
+    0% {
+        transform: translate(0, 0) scale(0.5);
+        opacity: 0;
+    }
+    10% {
+        opacity: var(--opacity, 0.8);
+    }
+    80% {
+        opacity: var(--opacity, 0.8);
+    }
+    100% {
+        transform: translate(
+            calc(var(--end-x) - var(--start-x)),
+            calc(var(--end-y) - var(--start-y))
+        ) scale(1);
+        opacity: 0;
+    }
+}
+
+/* 音乐控制按钮 */
+.music-control {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10000;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.music-control:hover {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+}
+
+.music-control i {
+    color: #fff;
+    font-size: 18px;
+    text-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+}
+
+/* 音乐控制按钮动画 */
+@keyframes pulse-ring {
+    0% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.3;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+}
+
+.music-control.playing::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    animation: pulse-ring 2s linear infinite;
+}
+ 
